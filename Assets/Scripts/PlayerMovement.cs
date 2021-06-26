@@ -16,12 +16,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 vel = new Vector2();
         moveDirection = Vector2.SmoothDamp(moveDirection, rawMovement, ref vel, Time.smoothDeltaTime, speed, Time.deltaTime);
-        Vector2 direction = moveDirection * speed;
-        rb.MovePosition(rb.position + direction);
+        Vector2 direction = moveDirection;
+        rb.MovePosition(rb.position + rawMovement * speed * Time.deltaTime);
     }
     private void Update()
     {
         rawMovement.x = Input.GetAxisRaw("Horizontal");
         rawMovement.y = Input.GetAxisRaw("Vertical");
+
     }
 }
