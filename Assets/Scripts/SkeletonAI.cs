@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SkeletonAI : MonoBehaviour
+public class SkeletonAI : BaseEnemyAI
 {
     public float speed;
     private Animator animator;
@@ -8,22 +8,22 @@ public class SkeletonAI : MonoBehaviour
     public string TeamTag;
     private Vector2 moveDirection;
     private GameObject player;
-    private void Start()
+    private new void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    private void FixedUpdate()
+    private new void FixedUpdate()
     {
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
-            
+            moveDirection = (player.transform.position - transform.position).normalized;
         }
         else
         {
-            rb.velocity = (player.transform.position - transform.position).normalized * 5;  
+            rb.velocity = (player.transform.position - transform.position).normalized * 3;  
         }
         if (rb.velocity.magnitude <= 0.5f)
         {

@@ -30,16 +30,20 @@ public class GnomeAI : BaseEnemyAI
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
-            moveDirection = player.transform.position - transform.position;
+            moveDirection = (player.transform.position - transform.position).normalized;
             if (time >= Cooldown)
             {
                 perk.Use(gameObject);
                 time = 0;
             }
         }
+        else if (dist <= 10)
+        {
+            moveDirection = -(player.transform.position - transform.position).normalized;
+        }
         else
         {
-            moveDirection = (player.transform.position + transform.position) / 4;
+
         }
         if (rb.velocity.magnitude <= 0.5f)
         {
