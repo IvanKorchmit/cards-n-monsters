@@ -17,6 +17,10 @@ public class Stats : MonoBehaviour, IDamagable
         health -= damage;
         if(health <= 0)
         {
+            if (CompareTag("Enemy"))
+            {
+                GameObject.Find("Player").GetComponent<PlayerPerks>().perk = GetComponent<BaseEnemyAI>().perk;
+            }
             Destroy(gameObject);
         }
     }

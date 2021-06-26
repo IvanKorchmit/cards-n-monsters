@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeAI : MonoBehaviour
+public class SlimeAI : BaseEnemyAI
 {
-    public PerkClass perk;
     private GameObject player;
     public bool IsDashing;
     private Animator animator;
-    private void Start()
+    protected override void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
@@ -38,5 +37,23 @@ public class SlimeAI : MonoBehaviour
             collision.gameObject.GetComponent<IDamagable>().Damage(5);
             animator.ResetTrigger("Jump");
         }
+    }
+}
+public class BaseEnemyAI : MonoBehaviour
+{
+    public PerkClass perk;
+    protected virtual void Start()
+    {
+
+    }
+
+    protected virtual void Update()
+    {
+
+    }
+
+    protected virtual void FixedUpdate()
+    {
+
     }
 }
