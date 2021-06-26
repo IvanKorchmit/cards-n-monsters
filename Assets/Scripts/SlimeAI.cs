@@ -18,12 +18,18 @@ public class SlimeAI : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.transform.position) <= 10)
         {
-            perk.Use(gameObject);
+            if (player != null)
+            {
+                perk.Use(gameObject);
+            }
         }
     }
     private void TriggerAnimation()
     {
-        animator.SetTrigger("Jump");
+        if (player != null)
+        {
+            animator.SetTrigger("Jump");
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
