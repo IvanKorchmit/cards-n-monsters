@@ -6,8 +6,10 @@ public class Dash : PerkClass
     {
         if(owner.CompareTag("Enemy"))
         {
+            Vector2 player = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Debug.Log("Trying to jump to player");
             Rigidbody2D rb = owner.GetComponent<Rigidbody2D>();
-            rb.MovePosition(rb.position - (Vector2)GameObject.Find("Player").transform.position);
+            rb.velocity = (player - rb.position).normalized * 20;
         }
     }
 }
