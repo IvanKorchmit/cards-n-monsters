@@ -32,9 +32,12 @@ public class SlimeAI : BaseEnemyAI
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(GetComponent<Rigidbody2D>().velocity.magnitude > 2)
+        if (GetComponent<Rigidbody2D>().velocity.magnitude > 2)
         {
-            collision.gameObject.GetComponent<IDamagable>().Damage(5);
+            if (collision.gameObject.TryGetComponent(out IDamagable dmg))
+            {
+                dmg.Damage(5);
+            }
             animator.ResetTrigger("Jump");
         }
     }

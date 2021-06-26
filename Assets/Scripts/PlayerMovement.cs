@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Vector2 rawMovement; // Raw Movement
-    private Vector2 moveDirection; // Processed movement direction
     [SerializeField] private float speed;
     private Rigidbody2D rb;
     private void Start()
