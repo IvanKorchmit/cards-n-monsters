@@ -9,7 +9,7 @@ public class Bomb : MonoBehaviour
     {
         Animator animator = GetComponent<Animator>();
         float dist = Vector2.Distance(Target, transform.position);
-        animator.speed = dist / animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        animator.speed = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length / dist * 10;
         destination = Target;
     }
     private void FixedUpdate()

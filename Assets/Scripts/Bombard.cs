@@ -11,5 +11,9 @@ public class Bombard : PerkClass
         {
             bomb.GetComponent<Bomb>().Init(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
+        else
+        {
+            bomb.GetComponent<Bomb>().Init(GameObject.FindGameObjectWithTag("Player").transform.position);
+        }
     }
 }
