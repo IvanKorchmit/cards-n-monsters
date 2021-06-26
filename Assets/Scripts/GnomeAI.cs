@@ -8,6 +8,8 @@ public class GnomeAI : BaseEnemyAI
     public float speed;
     private Rigidbody2D rb;
     private GameObject player;
+    [SerializeField] private float Cooldown;
+    private float time;
     protected override void Start()
     {
         base.Start();
@@ -16,6 +18,11 @@ public class GnomeAI : BaseEnemyAI
     }
     protected override void FixedUpdate()
     {
+        time += Time.deltaTime;
+        if(time >= Cooldown)
+        {
+            perk.Use(gameObject);
+        }
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
@@ -23,7 +30,7 @@ public class GnomeAI : BaseEnemyAI
         }
         else
         {
-            moveDirection = new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1f));
+            moveDirection = (player.transform.position + transform.position) / 4;
         }
         if (rb.velocity.magnitude <= 0.5f)
         {

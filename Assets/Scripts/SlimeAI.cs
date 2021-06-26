@@ -16,7 +16,7 @@ public class SlimeAI : BaseEnemyAI
     }
     public void Jump()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) <= 10)
+        if (player != null && Vector2.Distance(transform.position, player.transform.position) <= 10)
         {
             if (player != null)
             {

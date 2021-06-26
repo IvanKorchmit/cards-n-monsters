@@ -12,8 +12,11 @@ public class CameraFollow : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 newLerped = Vector3.Lerp(transform.position, player.transform.position, 0.1F);
-        newLerped.z = -10;
-        transform.position = newLerped;
+        if (player != null)
+        {
+            Vector3 newLerped = Vector3.Lerp(transform.position, player.transform.position, 0.1F);
+            newLerped.z = -10;
+            transform.position = newLerped;
+        }
     }
 }
