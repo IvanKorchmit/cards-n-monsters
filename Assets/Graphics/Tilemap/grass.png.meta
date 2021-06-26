@@ -92,6 +92,15 @@ TextureImporter:
   - first:
       213: 7090553169098523241
     second: grass_29
+  - first:
+      213: 1433647835158291232
+    second: water7
+  - first:
+      213: 3925414852906784594
+    second: water8
+  - first:
+      213: 6399507840787211314
+    second: water9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -806,6 +815,69 @@ TextureImporter:
       bones: []
       spriteID: 96243293a84b66260800000000000000
       internalID: 7090553169098523241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0232e9b3c1755e310800000000000000
+      internalID: 1433647835158291232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2571d8fc200e97630800000000000000
+      internalID: 3925414852906784594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234e273a97e9fc850800000000000000
+      internalID: 6399507840787211314
       vertices: []
       indices: 
       edges: []

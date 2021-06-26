@@ -5,6 +5,13 @@ using UnityEngine;
 public class Stats : MonoBehaviour, IDamagable
 {
     [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
+    public float MaxHealth => maxHealth;
+    public float Health => health;
+    private void Start()
+    {
+        maxHealth = health;
+    }
     public void Damage(float damage)
     {
         health -= damage;
