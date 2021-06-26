@@ -43,22 +43,3 @@ public class SlimeAI : BaseEnemyAI
         }
     }
 }
-public class BaseEnemyAI : MonoBehaviour
-{
-    public PerkClass perk;
-    public bool PerkStealingGuaranteed;
-    protected virtual void Start()
-    {
-        PerkStealingGuaranteed = Random.Range(0, 100) >= 80;
-    }
-
-    protected virtual void Update()
-    {
-
-    }
-
-    protected virtual void FixedUpdate()
-    {
-
-    }
-}
