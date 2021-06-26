@@ -26,7 +26,6 @@ public class GnomeAI : BaseEnemyAI
 
         animator.SetInteger("Angle",angle);
 
-
         time += Time.deltaTime;
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
@@ -45,6 +44,7 @@ public class GnomeAI : BaseEnemyAI
         if (rb.velocity.magnitude <= 0.5f)
         {
             rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
+            animator.SetInteger("Speed", Mathf.RoundToInt(moveDirection.magnitude));
         }
     }
 }

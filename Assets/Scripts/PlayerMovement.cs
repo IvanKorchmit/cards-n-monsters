@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.MovePosition(rb.position + rawMovement * speed * Time.deltaTime);
             animator.SetInteger("Angle", angle);
+            animator.SetInteger("Speed", Mathf.RoundToInt(rawMovement.magnitude));
         }
     }
     private void Update()

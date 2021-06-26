@@ -15,7 +15,7 @@ public class HealthUI : MonoBehaviour
 
     private void OnGUI()
     {
-        int filledValue = Mathf.RoundToInt(player.Health / player.MaxHealth * 100);
+        int filledValue = Mathf.RoundToInt((float) player.Health / player.MaxHealth * 100);
         int initHealth = 0;
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -24,7 +24,7 @@ public class HealthUI : MonoBehaviour
             {
                 heart.sprite = Full;
             }
-            else if (initHealth - filledValue <= 5)
+            else if (initHealth - filledValue <= 2)
             {
                 heart.sprite = Half;
             }

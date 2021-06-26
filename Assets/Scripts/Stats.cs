@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour, IDamagable
 {
-    [SerializeField] private float health;
-    [SerializeField] private float maxHealth;
+    [SerializeField] private int health;
+    [SerializeField] private int maxHealth;
     private Rigidbody2D rb;
     private Animator animator;
-    public float MaxHealth => maxHealth;
-    public float Health => health;
+    public int MaxHealth => maxHealth;
+    public int Health => health;
     private void Start()
     {
         maxHealth = health;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-    public void Damage(float damage, GameObject owner)
+    public void Damage(int damage, GameObject owner)
     {
         health -= damage;
         if (animator != null)
@@ -47,5 +47,5 @@ public class Stats : MonoBehaviour, IDamagable
 
 interface IDamagable
 {
-    void Damage(float damage, GameObject owner);
+    void Damage(int damage, GameObject owner);
 }
