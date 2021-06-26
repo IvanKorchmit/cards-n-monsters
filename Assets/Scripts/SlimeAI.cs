@@ -9,6 +9,7 @@ public class SlimeAI : BaseEnemyAI
     private Animator animator;
     protected override void Start()
     {
+        base.Start();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         InvokeRepeating("TriggerAnimation", 0, Random.Range(1f, 2));
@@ -36,7 +37,7 @@ public class SlimeAI : BaseEnemyAI
         {
             if (collision.gameObject.TryGetComponent(out IDamagable dmg))
             {
-                dmg.Damage(5);
+                dmg.Damage(5, gameObject);
             }
             animator.ResetTrigger("Jump");
         }
@@ -45,9 +46,10 @@ public class SlimeAI : BaseEnemyAI
 public class BaseEnemyAI : MonoBehaviour
 {
     public PerkClass perk;
+    public bool PerkStealingGuaranteed;
     protected virtual void Start()
     {
-
+        PerkStealingGuaranteed = Random.Range(0, 100) >= 80;
     }
 
     protected virtual void Update()

@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.DrawRay(origin + dir, dir);
             if (Ray.collider != null && Ray.collider.CompareTag("Enemy"))
             {
-                Ray.collider?.GetComponent<IDamagable>().Damage(10);
+                Ray.collider?.GetComponent<IDamagable>().Damage(10, gameObject);
             }
         }
     }
