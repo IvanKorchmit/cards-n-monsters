@@ -8,6 +8,7 @@ public class SkeletonAI : BaseEnemyAI
     public string TeamTag;
     private Vector2 moveDirection;
     private GameObject player;
+    private GameObject closest;
     private new void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,21 +17,44 @@ public class SkeletonAI : BaseEnemyAI
     }
     private new void FixedUpdate()
     {
+        if(TeamTag == "Player")
+        {
+            closest = Utils.FindClosest("Enemy", gameObject);
+        }
         float ang = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         int angle = Mathf.RoundToInt(ang / 90) * 90;
         angle = angle < 0 ? angle + 360 : angle;
 
         animator.SetInteger("Angle", angle);
 
-
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
-            rb.velocity = (player.transform.position - transform.position).normalized * 9;  
+            if (TeamTag != "Player")
+            {
+                moveDirection = (player.transform.position - transform.position).normalized;
+            }
+            else if (closest != null)
+            {
+                moveDirection = (closest.transform.position - transform.position).normalized;
+            }
+            else
+            {
+                moveDirection = Vector2.zero;
+            }
         }
         else
         {
-            moveDirection = (player.transform.position - transform.position).normalized;
+
+
+            if (TeamTag != "Player")
+            {
+                rb.velocity = (player.transform.position - transform.position).normalized * 9;
+            }
+            else if (closest != null)
+            {
+                rb.velocity = (closest.transform.position - transform.position).normalized * 9;
+            }
         }
         if (rb.velocity.magnitude <= 0.5f)
         {
@@ -42,8 +66,43 @@ public class SkeletonAI : BaseEnemyAI
     {
         if (collision.gameObject.TryGetComponent(out IDamagable dmg))
         {
-            dmg.Damage(7, gameObject);
-            rb.velocity = -(player.transform.position - transform.position).normalized * 9;
+            dmg.Damage(2, gameObject);
+            if (TeamTag != "Player")
+            {
+                rb.velocity = -(player.transform.position - transform.position).normalized * 9;
+            }
+            else
+            {
+                rb.velocity = -(closest.transform.position - transform.position).normalized * 9;
+
+            }
         }
+    }
+}
+
+
+public static class Utils
+{
+    public static GameObject FindClosest(string tag, GameObject origin)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+        GameObject result = null;
+        GameObject lastObject = null;
+        if (objects != null && objects.Length > 0)
+        {
+            float distance = Vector2.Distance(objects[0].transform.position, origin.transform.position);
+            int iteration = 0;
+            foreach (GameObject item in objects)
+            {
+                if (distance >= Vector2.Distance(item.transform.position, origin.transform.position))
+                {
+                    lastObject = item;
+                    distance = Vector2.Distance(item.transform.position, origin.transform.position);
+                }
+                iteration++;
+            }
+            result = lastObject;
+        }
+        return result;
     }
 }

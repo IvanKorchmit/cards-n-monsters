@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4f79ee565a8774ea4f3b138bedf618, type: 3}
+  m_Name: Necronomicon
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  name: 
+  Skeleton: {fileID: 4458833413107089295, guid: 9c68524b71392814ab8d0c2e78068eb5, type: 3}
+  playerLayer: 8
