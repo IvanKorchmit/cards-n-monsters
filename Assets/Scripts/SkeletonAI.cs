@@ -8,15 +8,21 @@ public class SkeletonAI : BaseEnemyAI
     public string TeamTag;
     private Vector2 moveDirection;
     private GameObject player;
+    private bool isRaising = true;
     private GameObject closest;
     private new void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        animator.Play("Raise");
     }
     private new void FixedUpdate()
     {
+        if(isRaising)
+        {
+            return;
+        }
         if(TeamTag == "Player")
         {
             closest = Utils.FindClosest("Enemy", gameObject);
@@ -77,6 +83,10 @@ public class SkeletonAI : BaseEnemyAI
 
             }
         }
+    }
+    public void FinishRaising()
+    {
+        isRaising = false;
     }
 }
 
