@@ -21,24 +21,28 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 origin = transform.position;
-            Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
-            rb.velocity = dir * 5;
+            animator.SetTrigger("Attack");
+        }
+    }
+    public void Attack()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 origin = transform.position;
+        Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
+        rb.velocity = dir * 5;
 
 
-            float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            int angle = Mathf.RoundToInt(ang / 90) * 90;
-            angle = angle < 0 ? angle + 360 : angle;
-            animator.SetInteger("Angle", angle);
+        float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        int angle = Mathf.RoundToInt(ang / 90) * 90;
+        angle = angle < 0 ? angle + 360 : angle;
+        animator.SetInteger("Angle", angle);
 
 
-            var Ray = Physics2D.Raycast(origin + dir, dir, 5,lyr);
-            Debug.DrawRay(origin + dir, dir);
-            if (Ray.collider != null && Ray.collider.CompareTag("Enemy"))
-            {
-                Ray.collider?.GetComponent<IDamagable>().Damage(10, gameObject);
-            }
+        var Ray = Physics2D.Raycast(origin + dir, dir, 5, lyr);
+        Debug.DrawRay(origin + dir, dir);
+        if (Ray.collider != null && Ray.collider.CompareTag("Enemy"))
+        {
+            Ray.collider?.GetComponent<IDamagable>().Damage(10, gameObject);
         }
     }
 }

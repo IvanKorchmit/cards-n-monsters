@@ -16,14 +16,21 @@ public class SkeletonAI : BaseEnemyAI
     }
     private new void FixedUpdate()
     {
+        float ang = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        int angle = Mathf.RoundToInt(ang / 90) * 90;
+        angle = angle < 0 ? angle + 360 : angle;
+
+        animator.SetInteger("Angle", angle);
+
+
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
-            moveDirection = (player.transform.position - transform.position).normalized;
+            rb.velocity = (player.transform.position - transform.position).normalized * 9;  
         }
         else
         {
-            rb.velocity = (player.transform.position - transform.position).normalized * 3;  
+            moveDirection = (player.transform.position - transform.position).normalized;
         }
         if (rb.velocity.magnitude <= 0.5f)
         {
@@ -33,13 +40,10 @@ public class SkeletonAI : BaseEnemyAI
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GetComponent<Rigidbody2D>().velocity.magnitude > 2)
+        if (collision.gameObject.TryGetComponent(out IDamagable dmg))
         {
-            if (collision.gameObject.TryGetComponent(out IDamagable dmg))
-            {
-                dmg.Damage(7, gameObject);
-            }
-            animator.ResetTrigger("Jump");
+            dmg.Damage(7, gameObject);
+            rb.velocity = -(player.transform.position - transform.position).normalized * 9;
         }
     }
 }
