@@ -6,6 +6,6 @@ public class ResetTriggerAttack : StateMachineBehaviour
 {
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Attack");
+        animator.SetBool("Attack", false);
     }
 }

@@ -15,5 +15,21 @@ public class Bomb : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, destination, 0.2f);
+        if((Vector2)transform.position == destination)
+        {
+            Explode();
+        }
+    }
+    private void Explode()
+    {
+        var hit = Physics2D.CircleCastAll(transform.position, 3, Vector2.zero, 0.01f);
+        foreach (RaycastHit2D item in hit)
+        {
+            if(item.collider != null && item.collider.gameObject.TryGetComponent(out IDamagable damage))
+            {
+                damage.Damage(10, gameObject);
+            }
+        }
+        Destroy(gameObject);
     }
 }
