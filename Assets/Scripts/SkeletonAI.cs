@@ -16,6 +16,7 @@ public class SkeletonAI : BaseEnemyAI
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator.Play("Raise");
+        animator.speed = Random.Range(0.7f, 1.5f);
     }
     private new void FixedUpdate()
     {
@@ -77,7 +78,7 @@ public class SkeletonAI : BaseEnemyAI
             {
                 rb.velocity = -(player.transform.position - transform.position).normalized * 9;
             }
-            else
+            else if (closest != null)
             {
                 rb.velocity = -(closest.transform.position - transform.position).normalized * 9;
 
