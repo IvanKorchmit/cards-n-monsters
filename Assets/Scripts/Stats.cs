@@ -6,6 +6,7 @@ public class Stats : MonoBehaviour, IDamagable
 {
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    public Item[] inventory;
     private Rigidbody2D rb;
     private Animator animator;
     public int MaxHealth => maxHealth;
@@ -38,9 +39,10 @@ public class Stats : MonoBehaviour, IDamagable
         }
     }
 
-    private void FixedUpdate()
+    public void Heal(int heal)
     {
-        
+        health += heal;
+        health = Mathf.Clamp(health, 0, maxHealth);
     }
 }
 

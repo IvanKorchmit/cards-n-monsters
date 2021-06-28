@@ -33,8 +33,7 @@ public class SkeletonAI : BaseEnemyAI
         angle = angle < 0 ? angle + 360 : angle;
 
         animator.SetInteger("Angle", angle);
-
-        float dist = Vector2.Distance(player.transform.position, transform.position);
+        float dist = TeamTag != "Player" && closest != null ? Vector2.Distance(closest.transform.position, transform.position) : Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
             if (TeamTag != "Player")

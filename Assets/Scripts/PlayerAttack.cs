@@ -41,10 +41,11 @@ public class PlayerAttack : MonoBehaviour
         rb.velocity = dir * 5;
 
 
-        var Ray = Physics2D.Raycast(origin + dir, dir, 1, lyr);
-        Debug.DrawRay(origin + dir, dir);
+        var Ray = Physics2D.CircleCast(origin + dir, 1, dir, 2, lyr);
+        Debug.DrawRay(origin + dir, dir);   
         if (Ray.collider != null && Ray.collider.CompareTag("Enemy"))
         {
+            Debug.Log("Damage");
             Ray.collider?.GetComponent<IDamagable>().Damage(10, gameObject);
         }
     }
