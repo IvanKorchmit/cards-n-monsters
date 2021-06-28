@@ -29,6 +29,7 @@ public class Stats : MonoBehaviour, IDamagable
         {
             if (CompareTag("Enemy"))
             {
+                PlayerLevel.GainXP(70);
                 BaseEnemyAI enemAI = GetComponent<BaseEnemyAI>();
                 if (enemAI.PerkStealingGuaranteed)
                 {

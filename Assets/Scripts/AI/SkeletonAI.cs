@@ -33,7 +33,7 @@ public class SkeletonAI : BaseEnemyAI
         angle = angle < 0 ? angle + 360 : angle;
 
         animator.SetInteger("Angle", angle);
-        float dist = TeamTag != "Player" && closest != null ? Vector2.Distance(closest.transform.position, transform.position) : Vector2.Distance(player.transform.position, transform.position);
+        float dist = TeamTag != "Player" && closest != null && player != null ? Vector2.Distance(closest.transform.position, transform.position) : Vector2.Distance(player.transform.position, transform.position);
         if (dist >= 4 && dist <= 10)
         {
             if (TeamTag != "Player")
@@ -72,7 +72,7 @@ public class SkeletonAI : BaseEnemyAI
     {
         if (collision.gameObject.TryGetComponent(out IDamagable dmg))
         {
-            dmg.Damage(2, gameObject);
+            dmg.Damage(1, gameObject);
             if (TeamTag != "Player")
             {
                 rb.velocity = -(player.transform.position - transform.position).normalized * 9;

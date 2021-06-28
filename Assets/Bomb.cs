@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
+    public GameObject explosion;
     private Vector2 destination;
     public void Init(Vector2 Target)
     {
@@ -22,6 +23,8 @@ public class Bomb : MonoBehaviour
     }
     private void Explode()
     {
+        var expl = Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(expl, expl.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length);
         var hit = Physics2D.CircleCastAll(transform.position, 3, Vector2.zero, 0.01f);
         foreach (RaycastHit2D item in hit)
         {
