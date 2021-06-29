@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class PlayerAttack : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -21,15 +21,18 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            Vector2 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
-            float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            int angle = Mathf.RoundToInt(ang / 90) * 90;
-            angle = angle < 0 ? angle + 360 : angle;
-            animator.SetInteger("Angle", angle);
-            animator.SetBool("Attack", true);
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
+                float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                int angle = Mathf.RoundToInt(ang / 90) * 90;
+                angle = angle < 0 ? angle + 360 : angle;
+                animator.SetInteger("Angle", angle);
+                animator.SetBool("Attack", true);
+            }
         }
     }
     public void Attack()

@@ -163,21 +163,21 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: -2.0333335
-        outSlope: -2.0333335
+        value: 0.30555725
+        inSlope: -0.036318425
+        outSlope: -0.036318425
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.21857922
+        outWeight: 0.38251364
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -2.1180553
-        outSlope: -2.1180553
+        inSlope: -0.10304053
+        outSlope: -0.10304053
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.32786888
+        inWeight: 0.40437162
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 119576054}
   - component: {fileID: 119576057}
   - component: {fileID: 6695398177062320908}
+  - component: {fileID: 5588501288618261583}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -446,8 +447,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 0
   inventory:
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}
+    quantity: 10
   - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}
@@ -485,6 +486,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5588501288618261583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201951798829312482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3062c88cf4cef84ca6e20e6d57bd879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8551750721255743287
 GameObject:
   m_ObjectHideFlags: 0

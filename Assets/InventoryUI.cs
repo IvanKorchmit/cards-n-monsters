@@ -5,12 +5,12 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     private bool openInv;
-    private Transform inventoryWindow;
+    public Transform inventoryWindow;
+    public Transform mainWindow;
     private Stats playerStats;
     public GameObject slot;
     private void Start()
     {
-        inventoryWindow = transform.Find("Inventory Panel");
         CheckInventory();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
         FillInventory();
@@ -29,7 +29,7 @@ public class InventoryUI : MonoBehaviour
     }
     private void CheckInventory()
     {
-        inventoryWindow.gameObject.SetActive(openInv);
+        mainWindow.gameObject.SetActive(openInv);
     }
     private void FillInventory()
     {
