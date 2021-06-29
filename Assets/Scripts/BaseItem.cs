@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(fileName = "New Item", menuName = "Items/Item")]
 public class BaseItem : ScriptableObject
 {
     public new string name;
@@ -13,18 +13,4 @@ public class BaseItem : ScriptableObject
     {
         Debug.Log("used item");
     }
-    
-}
-public class Potion : BaseItem
-{
-    public override void Use(GameObject owner, ref bool consumed)
-    {
-        consumed = true;
-    }
-}
-[System.Serializable]
-public class Item
-{
-    public BaseItem item;
-    public int quantity;
 }
