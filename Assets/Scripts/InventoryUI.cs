@@ -42,6 +42,7 @@ public class InventoryUI : MonoBehaviour
             for (int i = 0; i < playerStats.inventory.Length; i++)
             {
                 slot = Instantiate(slot, inventoryWindow);
+                slot.GetComponent<Image>().SetNativeSize();
             }
         }
     }
@@ -56,6 +57,7 @@ public class InventoryUI : MonoBehaviour
             Image icon = inventoryWindow.GetChild(i).Find("Icon").gameObject.GetComponent<Image>();
             icon.sprite = playerStats.inventory[i].item != null ? playerStats.inventory[i].item.sprite : null;
             icon.color = icon.sprite != null ? Color.white : Color.clear;
+            icon.SetNativeSize();
         }
     }
 }
