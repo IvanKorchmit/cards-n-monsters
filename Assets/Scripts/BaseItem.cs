@@ -14,3 +14,7 @@ public class BaseItem : ScriptableObject
         Debug.Log("used item");
     }
 }
+public class Weapon : BaseItem
+{
+    public int damage;
+}

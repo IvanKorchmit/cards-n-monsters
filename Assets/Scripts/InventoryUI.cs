@@ -33,6 +33,10 @@ public class InventoryUI : MonoBehaviour
     }
     private void FillInventory()
     {
+        for (int i = 0; i < inventoryWindow.childCount; i++)
+        {
+            Destroy(inventoryWindow.GetChild(i).gameObject);
+        }
         if (playerStats.inventory != null)
         {
             for (int i = 0; i < playerStats.inventory.Length; i++)
@@ -50,7 +54,8 @@ public class InventoryUI : MonoBehaviour
                 return;
             }
             Image icon = inventoryWindow.GetChild(i).Find("Icon").gameObject.GetComponent<Image>();
-            icon.sprite = playerStats.inventory[i].item.sprite;
+            icon.sprite = playerStats.inventory[i].item != null ? playerStats.inventory[i].item.sprite : null;
+            icon.color = icon.sprite != null ? Color.white : Color.clear;
         }
     }
 }
