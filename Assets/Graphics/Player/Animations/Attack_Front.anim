@@ -746,3 +746,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: PlayPitched
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 606b0109054f66142a98bc71a3854bf3, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
