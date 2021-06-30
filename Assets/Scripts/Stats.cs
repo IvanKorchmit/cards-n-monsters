@@ -6,6 +6,7 @@ public class Stats : MonoBehaviour, IDamagable
 {
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    public Weapon weapon;
     public Item[] inventory;
     private Rigidbody2D rb;
     private Animator animator;

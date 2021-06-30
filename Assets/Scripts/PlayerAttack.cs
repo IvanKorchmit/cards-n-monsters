@@ -8,10 +8,12 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask layers;
     private int lyr;
     private Animator animator;
+    private Stats stats;
     private Camera main;
     // Start is called before the first frame update
     void Start()
     {
+        stats = GetComponent<Stats>();
         main = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         lyr = layers;
@@ -37,19 +39,26 @@ public class PlayerAttack : MonoBehaviour
     }
     public void Attack()
     {
-        Debug.Log("Attacking");
-        Vector2 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 origin = transform.position;
-        Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
+        float distance = 1;
+        int damage = 1;
+        Vector2 mousePos, origin, dir;
+        mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+        origin = transform.position;
+        dir = (mousePos - (Vector2)transform.position).normalized;
         rb.velocity = dir * 5;
-
-
-        var Ray = Physics2D.CircleCast(origin + dir, 1.5f, dir, 1.5F, lyr);
-        Debug.DrawRay(origin + dir, dir);   
+        if (stats.weapon is Sword sword)
+        {
+            distance = sword.distance;
+            damage = sword.damage;
+            transform.Find("Sword").GetComponent<SpriteRenderer>().sprite = sword?.sprite ?? null;
+        }
+        var Ray = Physics2D.CircleCast(origin + dir, 1.5f, dir, distance, lyr);
+        Debug.DrawRay(origin + dir, dir);
         if (Ray.collider != null && Ray.collider.CompareTag("Enemy"))
         {
-            Debug.Log("Damage");
-            Ray.collider?.GetComponent<IDamagable>().Damage(10, gameObject);
+            Debug.Log("Damage " + damage.ToString());
+            Ray.collider?.GetComponent<IDamagable>().Damage(damage, gameObject);
         }
+
     }
 }
