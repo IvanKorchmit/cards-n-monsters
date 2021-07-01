@@ -18,14 +18,15 @@ public class Stats : MonoBehaviour, IDamagable
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-    public void Damage(int damage, GameObject owner)
+    public void Damage(int damage, GameObject owner, float power)
     {
         health -= damage;
         if (animator != null)
         {
             animator.SetTrigger("Damage");
         }
-        rb.velocity = -((Vector2)owner.transform.position - rb.position).normalized * 8f;
+        Vector2 push = -((Vector2)owner.transform.position - rb.position).normalized;
+        rb.velocity =  push != Vector2.zero ? push * power: new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1)) * power;
         if(health <= 0)
         {
             if (CompareTag("Enemy"))
@@ -51,5 +52,5 @@ public class Stats : MonoBehaviour, IDamagable
 
 interface IDamagable
 {
-    void Damage(int damage, GameObject owner);
+    void Damage(int damage, GameObject owner, float power);
 }

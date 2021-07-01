@@ -56,8 +56,7 @@ public class PlayerAttack : MonoBehaviour
         Debug.DrawRay(origin + dir, dir);
         if (Ray.collider != null && Ray.collider.CompareTag("Enemy"))
         {
-            Debug.Log("Damage " + damage.ToString());
-            Ray.collider?.GetComponent<IDamagable>().Damage(damage, gameObject);
+            Ray.collider?.GetComponent<IDamagable>().Damage(damage, gameObject, 8);
         }
 
     }

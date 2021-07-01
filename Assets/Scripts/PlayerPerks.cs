@@ -11,7 +11,6 @@ public class PlayerPerks : MonoBehaviour
         {
             if(perk != null)
             {
-                Debug.Log("Using perk by player");
                 perk.Use(gameObject);
             }
         }

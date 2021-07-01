@@ -30,7 +30,7 @@ public class Bomb : MonoBehaviour
         {
             if(item.collider != null && item.collider.gameObject.TryGetComponent(out IDamagable damage))
             {
-                damage.Damage(10, gameObject);
+                damage.Damage(10, gameObject, 20);
             }
         }
         Destroy(gameObject);

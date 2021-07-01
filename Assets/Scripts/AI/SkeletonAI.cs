@@ -72,7 +72,7 @@ public class SkeletonAI : BaseEnemyAI
     {
         if (collision.gameObject.TryGetComponent(out IDamagable dmg))
         {
-            dmg.Damage(1, gameObject);
+            dmg.Damage(1, gameObject,8);
             if (TeamTag != "Player")
             {
                 rb.velocity = -(player.transform.position - transform.position).normalized * 9;

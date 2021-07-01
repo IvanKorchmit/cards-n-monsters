@@ -13,6 +13,10 @@ public class BaseItem : ScriptableObject
     {
         Debug.Log("used item");
     }
+    public override string ToString()
+    {
+        return $"{name} {id}";
+    }
 }
 public class Weapon : BaseItem
 {

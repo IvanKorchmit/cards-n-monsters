@@ -37,7 +37,7 @@ public class SlimeAI : BaseEnemyAI
         {
             if (collision.gameObject.TryGetComponent(out IDamagable dmg))
             {
-                dmg.Damage(20, gameObject);
+                dmg.Damage(20, gameObject,6);
             }
             animator.ResetTrigger("Jump");
         }

@@ -41,8 +41,9 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < playerStats.inventory.Length; i++)
             {
-                slot = Instantiate(slot, inventoryWindow);
+                slot = Instantiate(this.slot, inventoryWindow);
                 slot.GetComponent<Image>().SetNativeSize();
+                slot.GetComponent<DragDropItem>().slotNumber = i;
             }
         }
     }
@@ -50,14 +51,17 @@ public class InventoryUI : MonoBehaviour
     {
         for (int i = 0; i < inventoryWindow.childCount; i++)
         {
-            if(i >= playerStats.inventory.Length)
+            if (i >= playerStats.inventory.Length)
             {
                 return;
             }
-            Image icon = inventoryWindow.GetChild(i).Find("Icon").gameObject.GetComponent<Image>();
-            icon.sprite = playerStats.inventory[i].item != null ? playerStats.inventory[i].item.sprite : null;
-            icon.color = icon.sprite != null ? Color.white : Color.clear;
-            icon.SetNativeSize();
+            Image icon = inventoryWindow.GetChild(i).Find("Icon")?.gameObject.GetComponent<Image>();
+            if (icon != null)
+            {
+                icon.sprite = playerStats.inventory[i].item != null ? playerStats.inventory[i].item.sprite : null;
+                icon.color = icon.sprite != null ? Color.white : Color.clear;
+                icon.SetNativeSize();
+            }
         }
     }
 }
