@@ -29,7 +29,7 @@ public class InventoryUI : MonoBehaviour
     }
     private void CheckInventory()
     {
-        mainWindow.gameObject.SetActive(openInv);
+        mainWindow.gameObject.SetActive(openInv); 
     }
     private void FillInventory()
     {
@@ -58,10 +58,11 @@ public class InventoryUI : MonoBehaviour
             Image icon = inventoryWindow.GetChild(i).Find("Icon")?.gameObject.GetComponent<Image>();
             if (icon != null)
             {
-                icon.sprite = playerStats.inventory[i].item != null ? playerStats.inventory[i].item.sprite : null;
+                icon.sprite = (playerStats.inventory[i]?.item ?? null) != null ? playerStats.inventory[i].item.sprite : null;
                 icon.color = icon.sprite != null ? Color.white : Color.clear;
                 icon.SetNativeSize();
             }
         }
     }
+
 }

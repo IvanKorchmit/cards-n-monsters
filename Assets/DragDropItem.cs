@@ -31,8 +31,9 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         switch (type)
         {
             case SpecializedSlot.weapon:
-                Debug.Log(icon);
                 icon.sprite = Player.weapon?.sprite ?? null;
+                icon.color = Player.weapon?.sprite ?? null != null ? Color.white : Color.clear;
+                icon.SetNativeSize();
                 break;
             case SpecializedSlot.helmet:
                 break;
@@ -69,7 +70,10 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnDrag(PointerEventData eventData)
     {
-        item.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (item != null)
+        {
+            item.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -94,18 +98,12 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                 case SpecializedSlot.inventory:
                     Player.inventory[slotNumber] = dragItem;
                     Player.inventory[origin] = temp;
-                    Destroy(item.gameObject);
                     break;
                 case SpecializedSlot.weapon:
                     if (dragItem.item is Weapon w)
                     {
-                        Player.inventory[origin] = null;
+                        Player.inventory[origin] = new Item(1, Player.weapon);
                         Player.weapon = w;
-                        Destroy(item.gameObject);
-                    }
-                    else
-                    {
-                        Destroy(item.gameObject);
                     }
                     break;
                 case SpecializedSlot.helmet:
@@ -115,6 +113,10 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                 case SpecializedSlot.leggings:
                     break;
             }
+
         }
+        dragItem = null;
+        Destroy(item.gameObject);
+
     }
 }
