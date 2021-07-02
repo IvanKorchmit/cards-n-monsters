@@ -78,8 +78,8 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        item.GetComponent<CanvasGroup>().blocksRaycasts = true;
-
+        Destroy(item.gameObject);
+        originSlot.alpha = 1;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -91,7 +91,6 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     {
         if (eventData.pointerDrag != null && eventData.pointerDrag.CompareTag("Slot"))
         {
-            originSlot.alpha = 1;
             Item temp = Player.inventory[slotNumber];
             switch (type)
             {
@@ -115,8 +114,6 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
             }
 
         }
-        dragItem = null;
-        Destroy(item.gameObject);
 
     }
 }
