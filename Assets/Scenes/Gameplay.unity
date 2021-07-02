@@ -18200,7 +18200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 825564727}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2011676468}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: PreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &825564727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20461,7 +20473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710972565}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2011676468}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1710972565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113121,7 +113145,6 @@ MonoBehaviour:
   mainWindow: {fileID: 630465314}
   slot: {fileID: 8645912520352783517, guid: fe0782fd3641b5041a387cf7a8060c35, type: 3}
   CategoryIcon: {fileID: 825219339770499767, guid: bcf4e053d6498a6448655e3e1368a647, type: 3}
-  categories: []
   RecipeButton: {fileID: 377466108864415716, guid: 43dd5bf073a771a4ab774b802d64c6c3, type: 3}
 --- !u!114 &2011676469
 MonoBehaviour:

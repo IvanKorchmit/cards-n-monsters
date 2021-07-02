@@ -19,7 +19,11 @@ public class Stats : MonoBehaviour, IDamagable
             if(inventory[i] != null && inventory[i].item == item.item)
             {
                 inventory[i].quantity += item.quantity;
-                invUI.CheckRecipes();
+                if (InventoryUI.openInv)
+                {
+                    InventoryUI.currentPage = 0;
+                    invUI.CheckRecipes();
+                }
                 return true;
             }
         }
@@ -28,7 +32,10 @@ public class Stats : MonoBehaviour, IDamagable
             if (inventory[i] == null || inventory[i].item == null)
             {
                 inventory[i] = new Item(item.quantity, item.item);
-                invUI.CheckRecipes();
+                if (InventoryUI.openInv)
+                {
+                    invUI.CheckRecipes();
+                }
                 return true;
             }
         }

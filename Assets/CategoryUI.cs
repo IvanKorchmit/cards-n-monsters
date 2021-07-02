@@ -11,4 +11,9 @@ public class CategoryUI : MonoBehaviour
         GetComponent<Image>().sprite = cat.icon;
     }
 
+    public void OnClick()
+    {
+        InventoryUI.currentCategory = cat;
+    }
+
 }
