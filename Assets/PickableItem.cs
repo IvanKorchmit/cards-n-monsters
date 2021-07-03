@@ -18,7 +18,6 @@ public class PickableItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("picking");
             if (collision.GetComponent<Stats>().AddItem(item))
             {
                 Destroy(gameObject);

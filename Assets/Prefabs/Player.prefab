@@ -154,7 +154,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.1
+  m_Time: 0.64
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -163,13 +163,13 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.30555725
-        inSlope: -0.036318425
-        outSlope: -0.036318425
+        value: 0.44444442
+        inSlope: 2.5915036
+        outSlope: 2.5915036
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.38251364
+        outWeight: 0.2786885
       - serializedVersion: 3
         time: 1
         value: 0
@@ -185,7 +185,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 1, g: 1, b: 1, a: 0.0411911}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -201,8 +201,8 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 26985
-      atime2: 0
+      atime1: 16384
+      atime2: 32768
       atime3: 0
       atime4: 0
       atime5: 0
@@ -316,9 +316,10 @@ GameObject:
   - component: {fileID: 6224399388915458510}
   - component: {fileID: 119576053}
   - component: {fileID: 119576054}
-  - component: {fileID: 119576057}
   - component: {fileID: 6695398177062320908}
   - component: {fileID: 5588501288618261583}
+  - component: {fileID: 1764306359}
+  - component: {fileID: 4668368932813931536}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -431,42 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5cba64f27ced94e9476941cacc3df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perk: {fileID: 0}
---- !u!114 &119576057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6201951798829312482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8c44385d5c0bb4db336433e02c6496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 0
-  inventory:
-  - item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}
-    quantity: 10
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
-  - item: {fileID: 0}
-    quantity: 0
+  perk: {fileID: 11400000, guid: a10413d7f97145047b1f6c818fee8fff, type: 2}
 --- !u!95 &6695398177062320908
 Animator:
   serializedVersion: 3
@@ -498,6 +464,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3062c88cf4cef84ca6e20e6d57bd879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1764306359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201951798829312482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37dffa1c9d58c94589d876947db6089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4668368932813931536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201951798829312482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 0
+  dropableItem: {fileID: 0}
+  weapon: {fileID: 0}
+  inventory:
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
 --- !u!1 &8551750721255743287
 GameObject:
   m_ObjectHideFlags: 0

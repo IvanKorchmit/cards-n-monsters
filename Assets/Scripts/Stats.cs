@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,19 +14,11 @@ public class Stats : MonoBehaviour, IDamagable
     private InventoryUI invUI;
     public bool AddItem(Item item)
     {
-        if(item.quantity > item.item.stack)
-        {
-            while(item.quantity >= item.item.stack)
-            {
-                item.quantity -= item.item.stack;
-                AddItem(item);
-            }
-        }
         for (int i = 0; i < inventory.Length; i++)
         {
             if (inventory[i].item != null && inventory[i].item == item.item)
             {
-                if (inventory[i].quantity + item.quantity <= inventory[i].item.stack)
+                if (inventory[i].quantity + item.quantity < item.item.stack)
                 {
                     inventory[i].quantity += item.quantity;
                     if (InventoryUI.openInv)
@@ -36,27 +28,39 @@ public class Stats : MonoBehaviour, IDamagable
                     }
                     return true;
                 }
-                else if (inventory[i].item.stack - item.quantity > 0)
+                else if (item.item.stack - item.quantity > 0)
                 {
-                    item.quantity = inventory[i].item.stack - item.quantity;
-                    
+                    item.quantity = item.item.stack - item.quantity;
+                    inventory[i].quantity = item.item.stack;
                 }
+            }
 
-            }
-            
         }
-        for (int i = 0; i < inventory.Length; i++)
+        do
         {
-            if (inventory[i].item == null || inventory[i].item == null)
+            for (int i = 0; i < inventory.Length; i++)
             {
-                inventory[i] = new Item(item.quantity, item.item);
-                if (InventoryUI.openInv)
+                if (inventory[i].item == null || inventory[i].item == null)
                 {
-                    invUI.CheckRecipes();
+                    if (item.quantity <= item.item.stack)
+                    {
+                        inventory[i] = new Item(item.quantity, item.item);
+                        if (InventoryUI.openInv)
+                        {
+                            invUI.CheckRecipes();
+                        }
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("test");
+                        inventory[i] = new Item(item.item.stack, item.item);
+                        item.quantity -= item.item.stack;
+                    }
+
                 }
-                return true;
             }
-        }
+        } while (item.quantity > item.item.stack);
         return false;
     }
 
@@ -79,8 +83,8 @@ public class Stats : MonoBehaviour, IDamagable
             animator.SetTrigger("Damage");
         }
         Vector2 push = -((Vector2)owner.transform.position - rb.position).normalized;
-        rb.velocity =  push != Vector2.zero ? push * power: new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1)) * power;
-        if(health <= 0)
+        rb.velocity = push != Vector2.zero ? push * power : new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1)) * power;
+        if (health <= 0)
         {
             if (CompareTag("Enemy"))
             {
@@ -89,7 +93,7 @@ public class Stats : MonoBehaviour, IDamagable
                 if (enemAI.PerkStealingGuaranteed)
                 {
                     GameObject.Find("Player").GetComponent<PlayerPerks>().perk = enemAI.perk;
-                }   
+                }
             }
             Destroy(gameObject);
         }

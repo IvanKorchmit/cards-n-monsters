@@ -45,6 +45,45 @@ public class CraftRecipe : ScriptableObject
     }
     public void Consume(Item[] inventory)
     {
-
+        Item ingridient = Ingridients[0];
+        int index = 0;
+        int remains = ingridient.quantity;
+        for (int i = inventory.Length - 1; i >= 0; i--)
+        {
+            if (inventory[i].quantity <= 0)
+            {
+                inventory[i].item = null;
+            }
+            if (remains <= 0)
+            {
+                i = inventory.Length - 1;
+                index++;
+                if(index > Ingridients.Length - 1)
+                {
+                    return;
+                }
+                ingridient = Ingridients[index];
+            }
+            if(inventory[i].item != null && inventory[i].item == ingridient.item)
+            {
+                if(inventory[i].quantity > ingridient.quantity)
+                {
+                    remains = 0;
+                    inventory[i].quantity -= ingridient.quantity;
+                    continue;
+                }
+                else if (inventory[i].quantity > remains)
+                {
+                    inventory[i].quantity -= remains;
+                    remains = 0;
+                    continue;
+                }
+                else
+                {
+                    remains -= inventory[i].quantity;
+                    inventory[i].quantity = 0;
+                }
+            }
+        }
     }
 }

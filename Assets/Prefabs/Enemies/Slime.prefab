@@ -176,8 +176,8 @@ GameObject:
   - component: {fileID: 2674174402939388208}
   - component: {fileID: 2674174402939388209}
   - component: {fileID: 2674174402939388215}
-  - component: {fileID: 2674174402939388214}
   - component: {fileID: 2674174402939388213}
+  - component: {fileID: 6954446507768071568}
   m_Layer: 3
   m_Name: Slime
   m_TagString: Enemy
@@ -264,20 +264,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2674174402939388214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2674174402939388211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8c44385d5c0bb4db336433e02c6496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  maxHealth: 0
 --- !u!95 &2674174402939388213
 Animator:
   serializedVersion: 3
@@ -297,6 +283,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6954446507768071568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2674174402939388211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  maxHealth: 0
+  dropableItem: {fileID: 0}
+  weapon: {fileID: 0}
+  inventory: []
 --- !u!1001 &6521412964263280743
 PrefabInstance:
   m_ObjectHideFlags: 0

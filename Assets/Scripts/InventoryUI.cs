@@ -76,6 +76,10 @@ public class InventoryUI : MonoBehaviour
     {
         for (int i = 0; i < inventoryWindow.childCount; i++)
         {
+            if(playerStats.inventory[i].quantity <= 0)
+            {
+                playerStats.inventory[i].item = null;
+            }
             if (i >= playerStats.inventory.Length)
             {
                 return;

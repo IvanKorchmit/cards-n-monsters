@@ -5,7 +5,7 @@ public struct Item
     public int quantity;
     public override string ToString()
     {
-        return $"{item.name} {item.id}";
+        return $"{item.name} {quantity}";
     }
     public Item(int quantity, BaseItem item)
     {

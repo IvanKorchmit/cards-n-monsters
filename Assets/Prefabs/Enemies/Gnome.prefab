@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5582586884354301487}
   - component: {fileID: 5582586884354301485}
-  - component: {fileID: 5582586884354301475}
   - component: {fileID: 5582586884354301486}
   - component: {fileID: 5582586884354301484}
   - component: {fileID: 5582586884354301474}
+  - component: {fileID: 500717884795033797}
   m_Layer: 7
   m_Name: Gnome
   m_TagString: Enemy
@@ -54,20 +54,6 @@ MonoBehaviour:
   PerkStealingGuaranteed: 0
   speed: 4
   Cooldown: 2.26
---- !u!114 &5582586884354301475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5582586884354301480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8c44385d5c0bb4db336433e02c6496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 30
-  maxHealth: 0
 --- !u!50 &5582586884354301486
 Rigidbody2D:
   serializedVersion: 4
@@ -134,6 +120,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &500717884795033797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582586884354301480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  maxHealth: 0
+  dropableItem: {fileID: 0}
+  weapon: {fileID: 0}
+  inventory: []
 --- !u!1 &5582586885026875307
 GameObject:
   m_ObjectHideFlags: 0

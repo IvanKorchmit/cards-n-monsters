@@ -174,10 +174,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6779432306250720659}
   - component: {fileID: 6779432306250720657}
-  - component: {fileID: 6779432306250720671}
   - component: {fileID: 6779432306250720658}
   - component: {fileID: 6779432306250720656}
   - component: {fileID: 6779432306250720670}
+  - component: {fileID: 40662351336997415}
   m_Layer: 7
   m_Name: Necromancer
   m_TagString: Enemy
@@ -218,21 +218,6 @@ MonoBehaviour:
   PerkStealingGuaranteed: 0
   speed: 4
   Cooldown: 14
---- !u!114 &6779432306250720671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6779432306250720660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8c44385d5c0bb4db336433e02c6496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 30
-  maxHealth: 0
-  inventory: []
 --- !u!50 &6779432306250720658
 Rigidbody2D:
   serializedVersion: 4
@@ -299,6 +284,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &40662351336997415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779432306250720660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  maxHealth: 0
+  dropableItem: {fileID: 0}
+  weapon: {fileID: 0}
+  inventory: []
 --- !u!1001 &7045881137686032002
 PrefabInstance:
   m_ObjectHideFlags: 0

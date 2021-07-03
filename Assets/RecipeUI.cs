@@ -24,9 +24,10 @@ public class RecipeUI : MonoBehaviour
     }
     public void Click()
     {
-        if(Player.AddItem(recipe.result))
+        if (recipe.isAvailable(Player.inventory))
         {
-            return;
+            recipe.Consume(Player.inventory);
+            Player.AddItem(recipe.result);
         }
     }
 }

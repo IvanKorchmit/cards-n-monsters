@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ingridients:
   - item: {fileID: 11400000, guid: 3385394106b20b64db9cd30a8b684a43, type: 2}
-    quantity: 1
+    quantity: 10
   RequiredLevel: 5
   result:
     item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}
-    quantity: 25
+    quantity: 6
