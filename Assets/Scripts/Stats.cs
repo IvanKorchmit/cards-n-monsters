@@ -14,22 +14,40 @@ public class Stats : MonoBehaviour, IDamagable
     private InventoryUI invUI;
     public bool AddItem(Item item)
     {
-        for (int i = 0; i < inventory.Length; i++)
+        if(item.quantity > item.item.stack)
         {
-            if(inventory[i] != null && inventory[i].item == item.item)
+            while(item.quantity >= item.item.stack)
             {
-                inventory[i].quantity += item.quantity;
-                if (InventoryUI.openInv)
-                {
-                    InventoryUI.currentPage = 0;
-                    invUI.CheckRecipes();
-                }
-                return true;
+                item.quantity -= item.item.stack;
+                AddItem(item);
             }
         }
         for (int i = 0; i < inventory.Length; i++)
         {
-            if (inventory[i] == null || inventory[i].item == null)
+            if (inventory[i].item != null && inventory[i].item == item.item)
+            {
+                if (inventory[i].quantity + item.quantity <= inventory[i].item.stack)
+                {
+                    inventory[i].quantity += item.quantity;
+                    if (InventoryUI.openInv)
+                    {
+                        InventoryUI.currentPage = 0;
+                        invUI.CheckRecipes();
+                    }
+                    return true;
+                }
+                else if (inventory[i].item.stack - item.quantity > 0)
+                {
+                    item.quantity = inventory[i].item.stack - item.quantity;
+                    
+                }
+
+            }
+            
+        }
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i].item == null || inventory[i].item == null)
             {
                 inventory[i] = new Item(item.quantity, item.item);
                 if (InventoryUI.openInv)

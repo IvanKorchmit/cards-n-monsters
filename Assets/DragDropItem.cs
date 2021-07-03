@@ -12,6 +12,7 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     }
     public SpecializedSlot type;
+    public static SpecializedSlot comingFrom;
     public static Item dragItem;
     public static Stats Player;
     public static Canvas canvas;
@@ -50,22 +51,30 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         if (type == SpecializedSlot.inventory)
         {
             dragItem = Player.inventory[slotNumber];
+            if (dragItem.item == null) return;
             origin = slotNumber;
-            originSlot = transform.Find("Icon").GetComponent<CanvasGroup>();
-            originSlot.alpha = 0.5f;
-            item = Instantiate(transform.Find("Icon").gameObject, canvas.transform).GetComponent<RectTransform>();
-            item.SetParent(canvas.transform);
-            item.GetComponent<AspectRatioFitter>().enabled = false;
-
-
-            item.anchorMin = new Vector2(0, 0);
-            item.anchorMax = new Vector2(0, 0);
-
-
-            item.GetComponent<Image>().SetNativeSize();
-            item.anchoredPosition = Input.mousePosition / canvas.scaleFactor;
-            item.GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
+        else if (type == SpecializedSlot.weapon)
+        {
+            dragItem = new Item(1, Player.weapon);
+        }
+
+        comingFrom = type;
+
+        originSlot = transform.Find("Icon").GetComponent<CanvasGroup>();
+        originSlot.alpha = 0.5f;
+        item = Instantiate(transform.Find("Icon").gameObject, canvas.transform).GetComponent<RectTransform>();
+        item.SetParent(canvas.transform);
+        item.GetComponent<AspectRatioFitter>().enabled = false;
+
+
+        item.anchorMin = new Vector2(0, 0);
+        item.anchorMax = new Vector2(0, 0);
+
+
+        item.GetComponent<Image>().SetNativeSize();
+        item.anchoredPosition = Input.mousePosition / canvas.scaleFactor;
+        item.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -78,7 +87,10 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Destroy(item.gameObject);
+        if (item != null)
+        {
+            Destroy(item.gameObject);
+        }
         originSlot.alpha = 1;
     }
 
@@ -89,14 +101,32 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (dragItem.item == null || dragItem.item == null)
+        {
+            return;
+        }
         if (eventData.pointerDrag != null && eventData.pointerDrag.CompareTag("Slot"))
         {
             Item temp = Player.inventory[slotNumber];
             switch (type)
             {
                 case SpecializedSlot.inventory:
-                    Player.inventory[slotNumber] = dragItem;
-                    Player.inventory[origin] = temp;
+                    if (comingFrom == SpecializedSlot.inventory)
+                    {
+                        Player.inventory[slotNumber] = dragItem;
+                        Player.inventory[origin] = temp;
+                    }
+                    else if (comingFrom == SpecializedSlot.weapon && temp.item is Weapon || temp.item == null)
+                    {
+                        Player.inventory[slotNumber] = dragItem;
+                        Weapon weap = temp.item as Weapon;
+                        Player.weapon = weap;
+                    }
+                    else if (!(temp.item is Weapon))
+                    {
+                        Debug.Log("Isn't");
+                        break;
+                    }
                     break;
                 case SpecializedSlot.weapon:
                     if (dragItem.item is Weapon w)

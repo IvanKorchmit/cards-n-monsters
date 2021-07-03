@@ -6,8 +6,10 @@ public class RecipeUI : MonoBehaviour
 {
     public CraftRecipe recipe;
     public GameObject ingridientIcon;
+    public Stats Player;
     private void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
         Init();
     }
     public void Init()
@@ -18,6 +20,13 @@ public class RecipeUI : MonoBehaviour
         {
             Image ingridientIcon = Instantiate(this.ingridientIcon, ingridients).GetComponent<Image>();
             ingridientIcon.sprite = recipe.Ingridients[i].item.sprite;
+        }
+    }
+    public void Click()
+    {
+        if(Player.AddItem(recipe.result))
+        {
+            return;
         }
     }
 }

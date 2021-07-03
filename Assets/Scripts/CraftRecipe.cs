@@ -19,7 +19,7 @@ public class CraftRecipe : ScriptableObject
             {
                 break;
             }
-            if(inventory[i] != null && inventory[i].item == currentIngridient.item)
+            if(inventory[i].item != null && inventory[i].item == currentIngridient.item)
             {
                 quantity += inventory[i].quantity;
             }
@@ -42,5 +42,9 @@ public class CraftRecipe : ScriptableObject
             }
         }
         return valid == Ingridients.Length;
+    }
+    public void Consume(Item[] inventory)
+    {
+
     }
 }

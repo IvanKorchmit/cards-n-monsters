@@ -9,6 +9,7 @@ public class BaseItem : ScriptableObject
     public Sprite sprite;
     public int cost;
     public int id;
+    public int stack;
     public virtual void Use(GameObject owner, ref bool consumed)
     {
         Debug.Log("used item");

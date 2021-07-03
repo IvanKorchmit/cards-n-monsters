@@ -18,4 +18,4 @@ MonoBehaviour:
   RequiredLevel: 5
   result:
     item: {fileID: 11400000, guid: ce0b0c20036ca184e8f54c3c5d1063bc, type: 2}
-    quantity: 0
+    quantity: 1

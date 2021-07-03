@@ -17,5 +17,6 @@ MonoBehaviour:
   sprite: {fileID: 4942803658038726614, guid: b693d3b090886b24b863487339cb9045, type: 3}
   cost: 0
   id: 1
+  stack: 1
   damage: 5
   distance: 1.25

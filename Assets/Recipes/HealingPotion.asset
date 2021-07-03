@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HealingPotion
   m_EditorClassIdentifier: 
   Ingridients:
-  - item: {fileID: 11400000, guid: ce0b0c20036ca184e8f54c3c5d1063bc, type: 2}
+  - item: {fileID: 11400000, guid: 3385394106b20b64db9cd30a8b684a43, type: 2}
     quantity: 1
   RequiredLevel: 5
   result:
     item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}
-    quantity: 0
+    quantity: 25

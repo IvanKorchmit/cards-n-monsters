@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Weapons
   icon: {fileID: 6123003023063038561, guid: b693d3b090886b24b863487339cb9045, type: 3}
   Recipes:
+  - {fileID: 11400000, guid: 0355cc712f6936a4289afbcaf638a1e4, type: 2}
   - {fileID: 11400000, guid: 5debe144a87213a42a52c443ff3d8876, type: 2}
   - {fileID: 11400000, guid: dd1db740e5550d04782359fd95377f94, type: 2}
-  - {fileID: 11400000, guid: 0355cc712f6936a4289afbcaf638a1e4, type: 2}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class InventoryUI : MonoBehaviour
 {
     public static int currentPage;
@@ -80,9 +81,15 @@ public class InventoryUI : MonoBehaviour
                 return;
             }
             Image icon = inventoryWindow.GetChild(i).Find("Icon")?.gameObject.GetComponent<Image>();
+            TextMeshProUGUI quantity = inventoryWindow.GetChild(i).Find("Icon/Quantity").GetComponent<TextMeshProUGUI>();
             if (icon != null)
             {
-                icon.sprite = (playerStats.inventory[i]?.item ?? null) != null ? playerStats.inventory[i].item.sprite : null;
+                Item it = playerStats.inventory[i];
+                quantity.text = it.quantity > 1 ? $"{it.quantity}" : "";
+
+
+
+                icon.sprite = it.item != null ? it.item.sprite : null;
                 icon.color = icon.sprite != null ? Color.white : Color.clear;
                 icon.SetNativeSize();
             }
@@ -106,7 +113,6 @@ public class InventoryUI : MonoBehaviour
             {
                 break;
             }   
-            Debug.Log($"{x} {currentPage + 2}");
             CraftRecipe craft = currentCategory.Recipes[x];
             if (craft.isAvailable(playerStats.inventory))
             {
