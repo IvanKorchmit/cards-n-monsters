@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Reflection;
 using UnityEngine.UI;
-public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
+    InventoryUI iUI;
     public enum SpecializedSlot
     {
         inventory, weapon, helmet, chest, leggings, trade
@@ -26,6 +27,7 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
         icon = transform.Find("Icon").GetComponent<Image>();
+        iUI = canvas.GetComponent<InventoryUI>();
     }
     private void OnGUI()
     {
@@ -50,6 +52,37 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                 icon.color = Player.leggings != null ? Color.white : Color.clear;
                 break;
         }
+        PointerEventData p = new PointerEventData(EventSystem.current)
+        {
+            pointerId = -1,
+        };
+        p.position = Input.mousePosition;
+
+        List<RaycastResult> res = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(p, res);
+        if (res.Count > 0)
+        {
+            foreach (var gui in res)
+            {
+                if (gui.gameObject.TryGetComponent(out DragDropItem drag))
+                {
+                    Debug.Log(res.Count);
+
+                    if (drag.type == SpecializedSlot.inventory)
+                    {
+                        iUI.DisplayInfo(Player.inventory[drag.slotNumber]);
+                        goto IgnoreDeactivating;
+                    }
+                    else if (drag.type == SpecializedSlot.trade)
+                    {
+                        iUI.DisplayInfo(InventoryUI.npc.inventory[drag.slotNumber]);
+                        goto IgnoreDeactivating;
+                    }
+                }
+            }
+        }
+        iUI.infoWindow.gameObject.SetActive(false);
+    IgnoreDeactivating:;
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -154,11 +187,6 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         originSlot.alpha = 1;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
-    }
-
     public void OnDrop(PointerEventData eventData)
     {
         if (dragItem.item == null || dragItem.item == null)
@@ -171,78 +199,101 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
             switch (type)
             {
                 case SpecializedSlot.inventory:
-                    if (comingFrom == SpecializedSlot.inventory)
                     {
-                        if (Player.inventory[slotNumber].item != null && Player.inventory[slotNumber].item != dragItem.item)
+                        if (comingFrom == SpecializedSlot.inventory)
                         {
-                            Player.inventory[slotNumber] = dragItem;
-                            Player.inventory[origin] = temp;
-                        }
-                        else if (Player.inventory[slotNumber].item == dragItem.item && Player.inventory[slotNumber].quantity < dragItem.item.stack)
-                        {
-                            if (Player.inventory[slotNumber].quantity + dragItem.quantity <= dragItem.item.stack)
-                            {
-                                Player.inventory[origin].quantity -= dragItem.quantity;
-                                Player.inventory[slotNumber].quantity += dragItem.quantity;
-                            }
-                            else
-                            {
-                                dragItem.quantity = (Player.inventory[slotNumber].quantity + dragItem.quantity) - dragItem.item.stack;
-                                Player.inventory[origin].quantity = dragItem.quantity;
-                                Player.inventory[slotNumber].quantity = dragItem.item.stack;
-                                Debug.Log(dragItem.quantity);
-                            }
-                        }
-                        else if (Player.inventory[slotNumber].item == null)
-                        {
-                            Player.inventory[origin].quantity -= dragItem.quantity;
-                            Player.inventory[slotNumber] = dragItem;
-                        }
-                    }
-                    else if (comingFrom == SpecializedSlot.trade)
-                    {
-                        int cost = 0;
-                        if (Trade.canAfford(dragItem, Player.Money, ref cost))
-                        {
-                            if (InventoryUI.npc.inventory[origin].item == temp.item || temp.item == null)
+                            if (Player.inventory[slotNumber].item != null && Player.inventory[slotNumber].item != dragItem.item)
                             {
                                 Player.inventory[slotNumber] = dragItem;
-                                InventoryUI.npc.inventory[origin].quantity -= dragItem.quantity;
-                                Player.Money -= cost;
-                                InventoryUI.npc.Money += cost;
+                                Player.inventory[origin] = temp;
+                            }
+                            else if (Player.inventory[slotNumber].item == dragItem.item && Player.inventory[slotNumber].quantity < dragItem.item.stack)
+                            {
+                                if (Player.inventory[slotNumber].quantity + dragItem.quantity <= dragItem.item.stack)
+                                {
+                                    Player.inventory[origin].quantity -= dragItem.quantity;
+                                    Player.inventory[slotNumber].quantity += dragItem.quantity;
+                                }
+                                else
+                                {
+                                    dragItem.quantity = (Player.inventory[slotNumber].quantity + dragItem.quantity) - dragItem.item.stack;
+                                    Player.inventory[origin].quantity = dragItem.quantity;
+                                    Player.inventory[slotNumber].quantity = dragItem.item.stack;
+                                }
+                            }
+                            else if (Player.inventory[slotNumber].item == null)
+                            {
+                                Player.inventory[origin].quantity -= dragItem.quantity;
+                                Player.inventory[slotNumber] = dragItem;
                             }
                         }
-                    }
-                    else if (comingFrom == SpecializedSlot.weapon && temp.item is Weapon || temp.item == null)
-                    {
-                        Player.inventory[slotNumber] = dragItem;
-                        Weapon weap = temp.item as Weapon;
-                        Player.weapon = weap;
-                    }
-                    else if (comingFrom == SpecializedSlot.helmet && temp.item is Helmet || temp.item == null)
-                    {
-                        Player.inventory[slotNumber] = dragItem;
-                        Helmet hel = temp.item as Helmet;
-                        Player.helmet = hel;
-                    }
-                    else if (comingFrom == SpecializedSlot.chest && temp.item is Chestplate || temp.item == null)
-                    {
-                        Player.inventory[slotNumber] = dragItem;
-                        Chestplate ch = temp.item as Chestplate;
-                        Player.chestplate = ch;
-                    }
-                    else if (comingFrom == SpecializedSlot.leggings && temp.item is Leggings || temp.item == null)
-                    {
-                        Player.inventory[slotNumber] = dragItem;
-                        Leggings lg = temp.item as Leggings;
-                        Player.leggings = lg;
-                    }
-                    else if (!(temp.item is Weapon) || !(temp.item is Helmet) || !(temp.item is Chestplate) || !(temp.item is Leggings))
-                    {
-                        Debug.Log("Isn't");
+                        else if (comingFrom == SpecializedSlot.trade)
+                        {
+                            int cost = 0;
+                            if (Trade.canAfford(dragItem, Player.Money, ref cost))
+                            {
+                                if (InventoryUI.npc.inventory[origin].item == temp.item || temp.item == null)
+                                {
+                                    Player.Money -= cost;
+                                    InventoryUI.npc.Money += cost;
+                                    if (Player.inventory[slotNumber].item != null && Player.inventory[slotNumber].item != dragItem.item)
+                                    {
+                                        Player.inventory[slotNumber] = dragItem;
+                                        InventoryUI.npc.inventory[origin] = temp;
+                                    }
+                                    else if (Player.inventory[slotNumber].item == dragItem.item && Player.inventory[slotNumber].quantity < dragItem.item.stack)
+                                    {
+                                        if (Player.inventory[slotNumber].quantity + dragItem.quantity <= dragItem.item.stack)
+                                        {
+                                            InventoryUI.npc.inventory[origin].quantity -= dragItem.quantity;
+                                            Player.inventory[slotNumber].quantity += dragItem.quantity;
+                                        }
+                                        else
+                                        {
+                                            dragItem.quantity = (Player.inventory[slotNumber].quantity + dragItem.quantity) - dragItem.item.stack;
+                                            InventoryUI.npc.inventory[origin].quantity = dragItem.quantity;
+                                            Player.inventory[slotNumber].quantity = dragItem.item.stack;
+                                        }
+                                    }
+                                    else if (Player.inventory[slotNumber].item == null)
+                                    {
+                                        InventoryUI.npc.inventory[origin].quantity -= dragItem.quantity;
+                                        Player.inventory[slotNumber] = dragItem;
+                                    }
+                                }
+                            }
+                        }
+                        else if (comingFrom == SpecializedSlot.weapon && temp.item is Weapon || temp.item == null)
+                        {
+                            Player.inventory[slotNumber] = dragItem;
+                            Weapon weap = temp.item as Weapon;
+                            Player.weapon = weap;
+                        }
+                        else if (comingFrom == SpecializedSlot.helmet && temp.item is Helmet || temp.item == null)
+                        {
+                            Player.inventory[slotNumber] = dragItem;
+                            Helmet hel = temp.item as Helmet;
+                            Player.helmet = hel;
+                        }
+                        else if (comingFrom == SpecializedSlot.chest && temp.item is Chestplate || temp.item == null)
+                        {
+                            Player.inventory[slotNumber] = dragItem;
+                            Chestplate ch = temp.item as Chestplate;
+                            Player.chestplate = ch;
+                        }
+                        else if (comingFrom == SpecializedSlot.leggings && temp.item is Leggings || temp.item == null)
+                        {
+                            Player.inventory[slotNumber] = dragItem;
+                            Leggings lg = temp.item as Leggings;
+                            Player.leggings = lg;
+                        }
+                        else if (!(temp.item is Weapon) || !(temp.item is Helmet) || !(temp.item is Chestplate) || !(temp.item is Leggings))
+                        {
+                            Debug.Log("Isn't");
+                            break;
+                        }
                         break;
                     }
-                    break;
                 case SpecializedSlot.weapon:
                     if (dragItem.item is Weapon w)
                     {
@@ -311,8 +362,7 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                         {
                             if (InventoryUI.npc.AddItem(dragItem))
                             {
-                                Player.inventory[origin].item = null;
-                                Player.inventory[origin].quantity = 0;
+                                Player.inventory[origin].quantity -= dragItem.quantity;
                                 Player.Money += cost;
                                 InventoryUI.npc.Money -= cost;
                             }

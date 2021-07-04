@@ -11,20 +11,22 @@ public class InventoryUI : MonoBehaviour
     public Transform containerWindow;
     public Transform containerSection;
     public Transform mainWindow;
+    public Canvas canvas;
     private Stats playerStats;
     public GameObject slot;
     public GameObject CategoryIcon;
     public GameObject RecipeButton;
     public static RecipeCategory currentCategory;
     public static Stats npc;
-
     public TextMeshProUGUI coinsPlayer;
     public TextMeshProUGUI coinsNPC;
 
+    public RectTransform infoWindow;
 
     private void Start()
     {
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
+        canvas = GetComponent<Canvas>();
         FillInventory();
         FillCategory();
         CheckInventory();
@@ -219,5 +221,20 @@ public class InventoryUI : MonoBehaviour
             category.transform.Find("Icon").GetComponent<CategoryUI>().cat = cat;
         }
     }
-
+    public void DisplayInfo(Item item)
+    {
+        if (item.item == null)
+        {
+            infoWindow.gameObject.SetActive(false);
+            return;
+        }
+        else
+        {
+            infoWindow.gameObject.SetActive(true);
+        }
+        infoWindow.anchoredPosition = (Vector2)(Input.mousePosition / canvas.scaleFactor) - infoWindow.sizeDelta / 2;
+        infoWindow.Find("Name/Text").GetComponent<TextMeshProUGUI>().text = item.item.name;
+        infoWindow.Find("Cost/Text").GetComponent<TextMeshProUGUI>().text = $"{item.quantity}x{item.item.cost}$ {item.item.cost*item.quantity}$";
+        infoWindow.Find("Description/Text").GetComponent<TextMeshProUGUI>().text = item.item.description;
+    }
 }

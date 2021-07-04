@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Iron Sword
   m_EditorClassIdentifier: 
   name: Iron Sword
-  description: 
+  description: Better sword, but not the best.
   sprite: {fileID: 6123003023063038561, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 0
+  cost: 30
   id: 2
   stack: 1
   damage: 15

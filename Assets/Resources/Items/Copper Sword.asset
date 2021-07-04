@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Copper Sword
   m_EditorClassIdentifier: 
   name: Copper Sword
-  description: 
+  description: Weak sword, good for start.
   sprite: {fileID: 4942803658038726614, guid: b693d3b090886b24b863487339cb9045, type: 3}
   cost: 0
   id: 1
