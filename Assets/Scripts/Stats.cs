@@ -18,7 +18,7 @@ public class Stats : MonoBehaviour, IDamagable
         {
             if (inventory[i].item != null && inventory[i].item == item.item)
             {
-                if (inventory[i].quantity + item.quantity < item.item.stack)
+                if (inventory[i].quantity + item.quantity <= item.item.stack)
                 {
                     inventory[i].quantity += item.quantity;
                     if (InventoryUI.openInv)
@@ -30,8 +30,9 @@ public class Stats : MonoBehaviour, IDamagable
                 }
                 else if (item.item.stack - item.quantity > 0)
                 {
-                    item.quantity = item.item.stack - item.quantity;
+                    item.quantity -= item.item.stack - inventory[i].quantity;
                     inventory[i].quantity = item.item.stack;
+
                 }
             }
 
@@ -88,7 +89,7 @@ public class Stats : MonoBehaviour, IDamagable
         {
             if (CompareTag("Enemy"))
             {
-                PlayerLevel.GainXP(70);
+                PlayerLevel.GainXP(Random.Range(30,60));
                 BaseEnemyAI enemAI = GetComponent<BaseEnemyAI>();
                 if (enemAI.PerkStealingGuaranteed)
                 {

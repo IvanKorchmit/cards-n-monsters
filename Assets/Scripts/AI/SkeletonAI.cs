@@ -33,39 +33,42 @@ public class SkeletonAI : BaseEnemyAI
         angle = angle < 0 ? angle + 360 : angle;
 
         animator.SetInteger("Angle", angle);
-        float dist = TeamTag != "Player" && closest != null && player != null ? Vector2.Distance(closest.transform.position, transform.position) : Vector2.Distance(player.transform.position, transform.position);
-        if (dist >= 4 && dist <= 10)
+        if (player != null && closest != null)
         {
-            if (TeamTag != "Player")
+            float dist = TeamTag != "Player" && closest != null && player != null ? Vector2.Distance(closest.transform.position, transform.position) : Vector2.Distance(player.transform.position, transform.position);
+            if (dist >= 4 && dist <= 10)
             {
-                moveDirection = (player.transform.position - transform.position).normalized;
-            }
-            else if (closest != null)
-            {
-                moveDirection = (closest.transform.position - transform.position).normalized;
+                if (TeamTag != "Player")
+                {
+                    moveDirection = (player.transform.position - transform.position).normalized;
+                }
+                else if (closest != null)
+                {
+                    moveDirection = (closest.transform.position - transform.position).normalized;
+                }
+                else
+                {
+                    moveDirection = Vector2.zero;
+                }
             }
             else
             {
-                moveDirection = Vector2.zero;
-            }
-        }
-        else
-        {
 
 
-            if (TeamTag != "Player")
-            {
-                rb.velocity = (player.transform.position - transform.position).normalized * 9;
+                if (TeamTag != "Player")
+                {
+                    rb.velocity = (player.transform.position - transform.position).normalized * 9;
+                }
+                else if (closest != null)
+                {
+                    rb.velocity = (closest.transform.position - transform.position).normalized * 9;
+                }
             }
-            else if (closest != null)
+            if (rb.velocity.magnitude <= 0.5f)
             {
-                rb.velocity = (closest.transform.position - transform.position).normalized * 9;
+                rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
+                animator.SetInteger("Speed", Mathf.RoundToInt(moveDirection.magnitude));
             }
-        }
-        if (rb.velocity.magnitude <= 0.5f)
-        {
-            rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
-            animator.SetInteger("Speed", Mathf.RoundToInt(moveDirection.magnitude));
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

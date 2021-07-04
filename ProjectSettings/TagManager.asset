@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Slot
+  - NPC
   layers:
   - Default
   - TransparentFX
