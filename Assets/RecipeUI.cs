@@ -27,7 +27,10 @@ public class RecipeUI : MonoBehaviour
         if (recipe.isAvailable(Player.inventory))
         {
             recipe.Consume(Player.inventory);
-            Player.AddItem(recipe.result);
+            if(!Player.AddItem(recipe.result))
+            {
+                Player.DropItem(recipe.result);
+            }
         }
     }
 }

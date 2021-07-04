@@ -23,3 +23,7 @@ public class Weapon : BaseItem
 {
     public int damage;
 }
+public class Armor : BaseItem
+{
+    public int defense;
+}

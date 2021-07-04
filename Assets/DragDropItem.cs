@@ -33,14 +33,21 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         {
             case SpecializedSlot.weapon:
                 icon.sprite = Player.weapon?.sprite ?? null;
-                icon.color = Player.weapon?.sprite ?? null != null ? Color.white : Color.clear;
+                icon.color = Player.weapon != null ? Color.white : Color.clear;
                 icon.SetNativeSize();
                 break;
             case SpecializedSlot.helmet:
+                icon.sprite = Player.helmet?.sprite ?? null;
+                icon.color = Player.helmet != null ? Color.white : Color.clear;
+                icon.SetNativeSize();
                 break;
             case SpecializedSlot.chest:
+                icon.sprite = Player.chestplate?.sprite ?? null;
+                icon.color = Player.chestplate != null ? Color.white : Color.clear;
                 break;
             case SpecializedSlot.leggings:
+                icon.sprite = Player.leggings?.sprite ?? null;
+                icon.color = Player.leggings != null ? Color.white : Color.clear;
                 break;
         }
     }
@@ -66,11 +73,32 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         {
             dragItem = new Item(1, Player.weapon);
         }
+        else if (type == SpecializedSlot.helmet)
+        {
+            dragItem = new Item(1, Player.helmet);
+        }
+        else if (type == SpecializedSlot.chest)
+        {
+            dragItem = new Item(1, Player.chestplate);
+        }
+        else if (type == SpecializedSlot.leggings)
+        {
+            dragItem = new Item(1, Player.leggings);
+        }
         else if (type == SpecializedSlot.trade)
         {
-            dragItem = InventoryUI.npc.inventory[slotNumber];
-            if (dragItem.item == null) return;
-            origin = slotNumber;
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                dragItem = new Item(1, InventoryUI.npc.inventory[slotNumber].item);
+                if (dragItem.item == null) return;
+                origin = slotNumber;
+            }
+            else
+            {
+                dragItem = InventoryUI.npc.inventory[slotNumber];
+                if (dragItem.item == null) return;
+                origin = slotNumber;
+            }
         }
 
         comingFrom = type;
@@ -150,22 +178,19 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                             Player.inventory[slotNumber] = dragItem;
                             Player.inventory[origin] = temp;
                         }
-                        else if (Player.inventory[slotNumber].item == dragItem.item)
+                        else if (Player.inventory[slotNumber].item == dragItem.item && Player.inventory[slotNumber].quantity < dragItem.item.stack)
                         {
-                            if (Player.inventory[slotNumber].quantity + dragItem.quantity < dragItem.item.stack)
+                            if (Player.inventory[slotNumber].quantity + dragItem.quantity <= dragItem.item.stack)
                             {
                                 Player.inventory[origin].quantity -= dragItem.quantity;
                                 Player.inventory[slotNumber].quantity += dragItem.quantity;
                             }
                             else
                             {
-                                Player.inventory[origin].quantity -= dragItem.quantity;
-                                dragItem.quantity -= dragItem.item.stack;
+                                dragItem.quantity = (Player.inventory[slotNumber].quantity + dragItem.quantity) - dragItem.item.stack;
+                                Player.inventory[origin].quantity = dragItem.quantity;
                                 Player.inventory[slotNumber].quantity = dragItem.item.stack;
-                                if (!Player.AddItem(dragItem))
-                                {
-                                    Player.DropItem(dragItem);
-                                }
+                                Debug.Log(dragItem.quantity);
                             }
                         }
                         else if (Player.inventory[slotNumber].item == null)
@@ -179,10 +204,13 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                         int cost = 0;
                         if (Trade.canAfford(dragItem, Player.Money, ref cost))
                         {
-                            InventoryUI.npc.inventory[origin] = temp;
-                            Player.inventory[slotNumber] = dragItem;
-                            Player.Money -= cost;
-                            InventoryUI.npc.Money += cost;
+                            if (InventoryUI.npc.inventory[origin].item == temp.item || temp.item == null)
+                            {
+                                Player.inventory[slotNumber] = dragItem;
+                                InventoryUI.npc.inventory[origin].quantity -= dragItem.quantity;
+                                Player.Money -= cost;
+                                InventoryUI.npc.Money += cost;
+                            }
                         }
                     }
                     else if (comingFrom == SpecializedSlot.weapon && temp.item is Weapon || temp.item == null)
@@ -191,7 +219,25 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                         Weapon weap = temp.item as Weapon;
                         Player.weapon = weap;
                     }
-                    else if (!(temp.item is Weapon))
+                    else if (comingFrom == SpecializedSlot.helmet && temp.item is Helmet || temp.item == null)
+                    {
+                        Player.inventory[slotNumber] = dragItem;
+                        Helmet hel = temp.item as Helmet;
+                        Player.helmet = hel;
+                    }
+                    else if (comingFrom == SpecializedSlot.chest && temp.item is Chestplate || temp.item == null)
+                    {
+                        Player.inventory[slotNumber] = dragItem;
+                        Chestplate ch = temp.item as Chestplate;
+                        Player.chestplate = ch;
+                    }
+                    else if (comingFrom == SpecializedSlot.leggings && temp.item is Leggings || temp.item == null)
+                    {
+                        Player.inventory[slotNumber] = dragItem;
+                        Leggings lg = temp.item as Leggings;
+                        Player.leggings = lg;
+                    }
+                    else if (!(temp.item is Weapon) || !(temp.item is Helmet) || !(temp.item is Chestplate) || !(temp.item is Leggings))
                     {
                         Debug.Log("Isn't");
                         break;
@@ -213,10 +259,49 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
                     }
                     break;
                 case SpecializedSlot.helmet:
+                    if (dragItem.item is Helmet h)
+                    {
+                        if (comingFrom == SpecializedSlot.inventory)
+                        {
+                            Player.inventory[origin] = new Item(1, Player.helmet);
+                            Player.helmet = h;
+                        }
+                        else if (comingFrom == SpecializedSlot.trade)
+                        {
+
+                            break;
+                        }
+                    }
                     break;
                 case SpecializedSlot.chest:
+                    if (dragItem.item is Chestplate c)
+                    {
+                        if (comingFrom == SpecializedSlot.inventory)
+                        {
+                            Player.inventory[origin] = new Item(1, Player.chestplate);
+                            Player.chestplate = c;
+                        }
+                        else if (comingFrom == SpecializedSlot.trade)
+                        {
+
+                            break;
+                        }
+                    }
                     break;
                 case SpecializedSlot.leggings:
+                    if (dragItem.item is Leggings l)
+                    {
+                        if (comingFrom == SpecializedSlot.inventory)
+                        {
+                            Player.inventory[origin] = new Item(1, Player.leggings);
+                            Player.leggings = l;
+                        }
+                        else if (comingFrom == SpecializedSlot.trade)
+                        {
+
+                            break;
+                        }
+                    }
                     break;
                 case SpecializedSlot.trade:
                     if (comingFrom == SpecializedSlot.inventory)

@@ -9,6 +9,9 @@ public class Stats : MonoBehaviour, IDamagable
     public int Money;
     public GameObject dropableItem;
     public Weapon weapon;
+    public Helmet helmet;
+    public Chestplate chestplate;
+    public Leggings leggings;
     public Item[] inventory;
     private Rigidbody2D rb;
     private Animator animator;
@@ -102,6 +105,13 @@ public class Stats : MonoBehaviour, IDamagable
     }
     public void Damage(int damage, GameObject owner, float power)
     {
+        int helmet = this.helmet?.defense ?? 1;
+        int chestplate = this.chestplate?.defense ?? 1;
+        int leggings = this.leggings?.defense ?? 1;
+        int total = helmet * chestplate * leggings;
+        damage /= total;
+        damage = damage == 0 ? 1 : damage;
+        Debug.Log(damage);
         health -= damage;
         if (animator != null)
         {
@@ -113,21 +123,28 @@ public class Stats : MonoBehaviour, IDamagable
         {
             if (CompareTag("Enemy"))
             {
-                PlayerLevel.GainXP(Random.Range(30,60));
+                PlayerLevel.GainXP(Random.Range(30, 60));
                 BaseEnemyAI enemAI = GetComponent<BaseEnemyAI>();
                 if (enemAI.PerkStealingGuaranteed)
                 {
                     GameObject.Find("Player").GetComponent<PlayerPerks>().perk = enemAI.perk;
                 }
             }
-            if(inventory.Length > 0)
+            if (inventory.Length > 0)
             {
                 for (int i = 0; i < inventory.Length; i++)
                 {
                     DropItem(i, inventory[i].quantity);
                 }
             }
-            Destroy(gameObject);
+            if (!CompareTag("Player"))
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
