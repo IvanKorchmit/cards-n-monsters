@@ -47,19 +47,22 @@ public class DemonAI : BaseEnemyAI
         angle = angle < 0 ? angle + 360 : angle;
 
         animator.SetInteger("Angle", angle);
-        float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist >= 4 && dist <= 10)
+        if (player != null)
         {
-            moveDirection = (player.transform.position - transform.position).normalized;
-        }
-        else
-        {
-            rb.velocity = (player.transform.position - transform.position).normalized * 2;
-        }
-        if (rb.velocity.magnitude <= 0.5f)
-        {
-            rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
-            animator.SetInteger("Speed", Mathf.RoundToInt(moveDirection.magnitude));
+            float dist = Vector2.Distance(player.transform.position, transform.position);
+            if (dist >= 4 && dist <= 10)
+            {
+                moveDirection = (player.transform.position - transform.position).normalized;
+            }
+            else
+            {
+                rb.velocity = (player.transform.position - transform.position).normalized * 2;
+            }
+            if (rb.velocity.magnitude <= 0.5f)
+            {
+                rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
+                animator.SetInteger("Speed", Mathf.RoundToInt(moveDirection.magnitude));
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

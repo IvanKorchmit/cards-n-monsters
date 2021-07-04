@@ -6,6 +6,7 @@ public class Stats : MonoBehaviour, IDamagable
 {
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    public int Money;
     public GameObject dropableItem;
     public Weapon weapon;
     public Item[] inventory;
@@ -54,7 +55,6 @@ public class Stats : MonoBehaviour, IDamagable
                     }
                     else
                     {
-                        Debug.Log("test");
                         inventory[i] = new Item(item.item.stack, item.item);
                         item.quantity -= item.item.stack;
                     }
@@ -65,8 +65,32 @@ public class Stats : MonoBehaviour, IDamagable
         return false;
     }
 
-
-
+    public void DropItem(int i, int quantity)
+    {
+        if (inventory[i].item != null)
+        {
+            Item temp = inventory[i];
+            if (inventory[i].quantity <= quantity)
+            {
+                inventory[i].quantity = 0;
+                inventory[i].item = null;
+            }
+            else
+            {
+                inventory[i].quantity -= quantity;
+            }
+            var drop = Instantiate(dropableItem, transform.position, Quaternion.identity);
+            drop.GetComponent<PickableItem>().item = temp;
+        }
+    }
+    public void DropItem(Item item)
+    {
+        if (item.item != null)
+        {
+            var drop = Instantiate(dropableItem, transform.position, Quaternion.identity);
+            drop.GetComponent<PickableItem>().item = item;
+        }
+    }
     public int MaxHealth => maxHealth;
     public int Health => health;
     private void Start()
@@ -94,6 +118,13 @@ public class Stats : MonoBehaviour, IDamagable
                 if (enemAI.PerkStealingGuaranteed)
                 {
                     GameObject.Find("Player").GetComponent<PlayerPerks>().perk = enemAI.perk;
+                }
+            }
+            if(inventory.Length > 0)
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                {
+                    DropItem(i, inventory[i].quantity);
                 }
             }
             Destroy(gameObject);

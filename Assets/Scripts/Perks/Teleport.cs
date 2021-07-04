@@ -9,8 +9,11 @@ public class Teleport : PerkClass
         if(owner.CompareTag("Enemy"))
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            owner.transform.position = player.transform.position;
-            player.GetComponent<IDamagable>().Damage(Random.Range(1, damage), owner, 8);
+            if (player != null)
+            {
+                owner.transform.position = player.transform.position;
+                player.GetComponent<IDamagable>().Damage(Random.Range(1, damage), owner, 8);
+            }
         }
         else
         {

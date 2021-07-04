@@ -35,6 +35,16 @@ public class PlayerAttack : MonoBehaviour
                 animator.SetInteger("Angle", angle);
                 animator.SetBool("Attack", true);
             }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                Vector2 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
+                float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                int angle = Mathf.RoundToInt(ang / 90) * 90;
+                angle = angle < 0 ? angle + 360 : angle;
+                animator.SetInteger("Angle", angle);
+                Interact();
+            }
         }
     }
     public void Attack()
@@ -59,5 +69,24 @@ public class PlayerAttack : MonoBehaviour
             Ray.collider?.GetComponent<IDamagable>().Damage(damage, gameObject, 8);
         }
 
+    }
+    private void Interact()
+    {
+        Vector2 mousePos, origin, dir;
+        mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+        origin = transform.position;
+        dir = (mousePos - (Vector2)transform.position).normalized;
+        var Ray = Physics2D.CircleCastAll(origin + dir, 1.5f, dir, 1.5f, lyr);
+        foreach (var r in Ray)
+        {
+            if (r.collider != null && r.collider.CompareTag("NPC"))
+            {
+                InventoryUI.openInv = true;
+                InventoryUI.npc = r.collider.GetComponent<npcAI>().Interact();
+                r.collider.GetComponent<npcAI>().isBusy = true;
+                GameObject.Find("Canvas").GetComponent<InventoryUI>().CheckInventory();
+                break;
+            }
+        }
     }
 }

@@ -31,6 +31,10 @@ public class npcAI : MonoBehaviour
         }
         
     }
+    public Stats Interact()
+    {
+        return GetComponent<Stats>();
+    }
     private IEnumerator Move()
     {
         float ang = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;

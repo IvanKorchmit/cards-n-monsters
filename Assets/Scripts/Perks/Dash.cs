@@ -5,10 +5,13 @@ public class Dash : PerkClass
     public override void Use(GameObject owner)
     {
         Rigidbody2D rb = owner.GetComponent<Rigidbody2D>();
-        if(owner.CompareTag("Enemy"))
+        if (owner.CompareTag("Enemy"))
         {
-            Vector2 player = GameObject.FindGameObjectWithTag("Player").transform.position;
-            rb.velocity = (player - rb.position).normalized * 20;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                rb.velocity = ((Vector2)player.transform.position - rb.position).normalized * 20;
+            }
         }
         else
         {

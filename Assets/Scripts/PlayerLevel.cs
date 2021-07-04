@@ -35,3 +35,12 @@ public static class MusicZoneTheme
 
 
 }
+
+public static class Trade
+{
+    public static bool canAfford(Item item, int money, ref int totalcost)
+    {
+        totalcost = (item.quantity * item.item.cost);
+        return totalcost <= money;
+    }
+}

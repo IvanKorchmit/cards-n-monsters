@@ -8,12 +8,20 @@ public class InventoryUI : MonoBehaviour
     public static int currentPage;
     public static bool openInv;
     public Transform inventoryWindow;
+    public Transform containerWindow;
+    public Transform containerSection;
     public Transform mainWindow;
     private Stats playerStats;
     public GameObject slot;
     public GameObject CategoryIcon;
     public GameObject RecipeButton;
     public static RecipeCategory currentCategory;
+    public static Stats npc;
+
+    public TextMeshProUGUI coinsPlayer;
+    public TextMeshProUGUI coinsNPC;
+
+
     private void Start()
     {
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
@@ -23,6 +31,14 @@ public class InventoryUI : MonoBehaviour
     }
     private void Update()
     {
+        if(npc != null)
+        {
+            if(Vector2.Distance(playerStats.gameObject.transform.position,npc.gameObject.transform.position) > 2f)
+            {
+                openInv = false;
+                CheckInventory();
+            }
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             openInv = !openInv;
@@ -33,16 +49,26 @@ public class InventoryUI : MonoBehaviour
             UpdateInventory();
         }
     }
-    private void CheckInventory()
+    public void CheckInventory()
     {
         mainWindow.gameObject.SetActive(openInv);
+        containerSection.gameObject.SetActive(npc != null);
         if (openInv)
         {
             CheckRecipes();
+            if (npc != null)
+            {
+                FillInventoryContainer();
+            }
         }
         else
         {
             ChangeCategory();
+            if (npc != null)
+            {
+                npc.GetComponent<npcAI>().isBusy = false;
+                npc = null;
+            }
         }
     }
     public void NextPage()
@@ -66,9 +92,26 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < playerStats.inventory.Length; i++)
             {
-                slot = Instantiate(this.slot, inventoryWindow);
+                var slot = Instantiate(this.slot, inventoryWindow);
                 slot.GetComponent<Image>().SetNativeSize();
                 slot.GetComponent<DragDropItem>().slotNumber = i;
+            }
+        }
+    }
+    public void FillInventoryContainer()
+    {
+        for (int i = 0; i < containerWindow.childCount; i++)
+        {
+            Destroy(containerWindow.GetChild(i).gameObject);
+        }
+        if (npc.inventory != null)
+        {
+            for (int i = 0; i < npc.inventory.Length; i++)
+            {
+                var slot = Instantiate(this.slot, containerWindow);
+                slot.GetComponent<Image>().SetNativeSize();
+                slot.GetComponent<DragDropItem>().slotNumber = i;
+                slot.GetComponent<DragDropItem>().type = DragDropItem.SpecializedSlot.trade;
             }
         }
     }
@@ -97,6 +140,38 @@ public class InventoryUI : MonoBehaviour
                 icon.color = icon.sprite != null ? Color.white : Color.clear;
                 icon.SetNativeSize();
             }
+        }
+        if (npc != null)
+        {
+            for (int i = 0; i < containerWindow.childCount; i++)
+            {
+                if (i > npc.inventory.Length - 1)
+                {
+                    return;
+                }
+                if (npc.inventory[i].quantity <= 0)
+                {
+                    npc.inventory[i].item = null;
+                }
+                Image icon = containerWindow.GetChild(i).Find("Icon")?.gameObject.GetComponent<Image>();
+                TextMeshProUGUI quantity = containerWindow.GetChild(i).Find("Icon/Quantity").GetComponent<TextMeshProUGUI>();
+                if (icon != null)
+                {
+                    Item it = npc.inventory[i];
+                    quantity.text = it.quantity > 1 ? $"{it.quantity}" : "";
+
+
+
+                    icon.sprite = it.item != null ? it.item.sprite : null;
+                    icon.color = icon.sprite != null ? Color.white : Color.clear;
+                    icon.SetNativeSize();
+                }
+            }
+        }
+        coinsPlayer.text = playerStats.Money.ToString();
+        if (npc != null)
+        {
+            coinsNPC.text = npc.Money.ToString();
         }
     }
     public void ChangeCategory()

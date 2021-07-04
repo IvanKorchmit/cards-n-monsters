@@ -13,7 +13,11 @@ public class Bombard : PerkClass
         }
         else
         {
-            bomb.GetComponent<Bomb>().Init(GameObject.FindGameObjectWithTag("Player").transform.position);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                bomb.GetComponent<Bomb>().Init(player.transform.position);
+            }
         }
     }
 }
