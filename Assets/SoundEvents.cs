@@ -9,6 +9,7 @@ public class SoundEvents : MonoBehaviour
         AudioSource audio = new GameObject("Audio", typeof(AudioSource)).GetComponent<AudioSource>();
         audio.clip = clip;
         audio.pitch = Random.Range(0.7f, 1.4f);
+        audio.volume = 1.0f * Settings.SFX;
         audio.Play();
         audio.transform.position = Camera.main.transform.position;
         Destroy(audio, clip.length);
@@ -17,6 +18,7 @@ public class SoundEvents : MonoBehaviour
     {
         AudioSource audio = new GameObject("Audio", typeof(AudioSource)).GetComponent<AudioSource>();
         audio.clip = clip;
+        audio.volume = 1.0f * Settings.SFX;
         audio.Play();
         audio.transform.position = Camera.main.transform.position;
         Destroy(audio, clip.length);

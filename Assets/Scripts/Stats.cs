@@ -111,7 +111,6 @@ public class Stats : MonoBehaviour, IDamagable
         int total = helmet * chestplate * leggings;
         damage /= total;
         damage = damage == 0 ? 1 : damage;
-        Debug.Log(damage);
         health -= damage;
         if (animator != null)
         {

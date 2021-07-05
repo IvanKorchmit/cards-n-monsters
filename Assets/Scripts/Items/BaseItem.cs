@@ -27,3 +27,10 @@ public class Armor : BaseItem
 {
     public int defense;
 }
+
+public static class Settings
+{
+    public static float musicVolume = 1.0f;
+    public static float SFX = 1.0f;
+
+}
