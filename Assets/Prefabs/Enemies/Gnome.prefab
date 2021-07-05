@@ -132,10 +132,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 15
   maxHealth: 0
-  dropableItem: {fileID: 0}
+  Money: 0
+  dropableItem: {fileID: 8990615170850155902, guid: b61e0126471080a4ab3ce787aed39338, type: 3}
   weapon: {fileID: 0}
+  helmet: {fileID: 0}
+  chestplate: {fileID: 0}
+  leggings: {fileID: 0}
   inventory: []
 --- !u!1 &5582586885026875307
 GameObject:

@@ -22,6 +22,7 @@ public class ScenesManager : MonoBehaviour
     }
     public void ChangeVolumeMusic(System.Single value)
     {
+        GetComponent<AudioSource>().volume = value;
         Settings.musicVolume = value;
     }
 }

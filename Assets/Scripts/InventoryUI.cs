@@ -12,6 +12,7 @@ public class InventoryUI : MonoBehaviour
     public Transform containerSection;
     public Transform mainWindow;
     public Canvas canvas;
+    public CanvasScaler scaler;
     private Stats playerStats;
     public GameObject slot;
     public GameObject CategoryIcon;
@@ -25,6 +26,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
+        scaler = GetComponent<CanvasScaler>();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
         canvas = GetComponent<Canvas>();
         FillInventory();
@@ -232,7 +234,9 @@ public class InventoryUI : MonoBehaviour
         {
             infoWindow.gameObject.SetActive(true);
         }
-        infoWindow.anchoredPosition = (Vector2)(Input.mousePosition / canvas.scaleFactor) - infoWindow.sizeDelta / 2;
+        Vector2 res = new Vector2();
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out res);
+        infoWindow.anchoredPosition = res;
         infoWindow.Find("Name/Text").GetComponent<TextMeshProUGUI>().text = item.item.name;
         infoWindow.Find("Cost/Text").GetComponent<TextMeshProUGUI>().text = $"{item.quantity}x{item.item.cost}$ {item.item.cost*item.quantity}$";
         infoWindow.Find("Description/Text").GetComponent<TextMeshProUGUI>().text = item.item.description;

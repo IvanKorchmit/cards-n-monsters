@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Reflection;
 using UnityEngine.UI;
-public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler, IPointerClickHandler
 {
     InventoryUI iUI;
     public enum SpecializedSlot
@@ -66,7 +66,6 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
             {
                 if (gui.gameObject.TryGetComponent(out DragDropItem drag))
                 {
-                    Debug.Log(res.Count);
 
                     if (drag.type == SpecializedSlot.inventory)
                     {
@@ -373,5 +372,24 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
 
         }
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.clickCount == 2)
+        {
+            bool consumed = false;
+            if (type == SpecializedSlot.inventory)
+            {
+                if (Player.inventory[slotNumber].item != null)
+                {
+                    Player.inventory[slotNumber].item.Use(Player.gameObject, ref consumed);
+                    if (consumed)
+                    {
+                        Player.inventory[slotNumber].quantity--;
+                    }
+                }
+            }
+        }
     }
 }

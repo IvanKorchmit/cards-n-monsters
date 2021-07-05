@@ -60,7 +60,11 @@ public class PlayerAttack : MonoBehaviour
         {
             distance = sword.distance;
             damage = sword.damage;
-            transform.Find("Sword").GetComponent<SpriteRenderer>().sprite = sword?.sprite ?? null;
+            transform.Find("Sword").GetComponent<SpriteRenderer>().sprite = sword != null ? sword.sprite : null;
+        }
+        else if (stats.weapon == null)
+        {
+            transform.Find("Sword").GetComponent<SpriteRenderer>().sprite = null;
         }
         var Ray = Physics2D.CircleCast(origin + dir, 1.5f, dir, distance, lyr);
         Debug.DrawRay(origin + dir, dir);

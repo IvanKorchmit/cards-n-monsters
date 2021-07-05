@@ -71,8 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3402368762417361602, guid: 5f94ca5d8ac9128469622503e7777776, type: 3}
-  m_Color: {r: 0, g: 0.6533134, b: 1, a: 1}
+  m_Sprite: {fileID: 7301379902564665104, guid: b7f13f8cd96948e468ea2e56bddd0165, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -232,8 +232,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   maxHealth: 0
-  dropableItem: {fileID: 0}
+  Money: 0
+  dropableItem: {fileID: 8990615170850155902, guid: b61e0126471080a4ab3ce787aed39338, type: 3}
   weapon: {fileID: 0}
+  helmet: {fileID: 0}
+  chestplate: {fileID: 0}
+  leggings: {fileID: 0}
   inventory: []
 --- !u!50 &1110176797871475797
 Rigidbody2D:
@@ -292,7 +296,7 @@ Animator:
   m_GameObject: {fileID: 1110176797871475795}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 29c5baceda2e1b14bb20294dcd4c967d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 9ba8f4e8318340647929d77ec6f0158c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
