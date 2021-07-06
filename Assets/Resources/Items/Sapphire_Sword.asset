@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f21170acb764141b48471f4318debb, type: 3}
   m_Name: Sapphire_Sword
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  sprite: {fileID: 0}
-  cost: 0
+  name: Sapphire Sword
+  description: Woah!
+  sprite: {fileID: -9004990608046106943, guid: b693d3b090886b24b863487339cb9045, type: 3}
+  cost: 120
   id: 0
-  stack: 0
-  damage: 0
-  distance: 0
+  stack: 1
+  damage: 30
+  distance: 2

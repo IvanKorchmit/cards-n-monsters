@@ -19,6 +19,10 @@ public class Stats : MonoBehaviour, IDamagable
     private Vector2 initPos;
     public bool AddItem(Item item)
     {
+        if(item.item.stack <= 0)
+        {
+            item.item.stack = 1;
+        }
         for (int i = 0; i < inventory.Length; i++)
         {
             if (inventory[i].item != null && inventory[i].item == item.item)
