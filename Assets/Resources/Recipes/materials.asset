@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 465c9be1495fad540a0b96db5514801c, type: 3}
-  m_Name: weapons
+  m_Name: materials
   m_EditorClassIdentifier: 
-  name: Weapons
-  icon: {fileID: 6123003023063038561, guid: b693d3b090886b24b863487339cb9045, type: 3}
+  name: Materials
+  icon: {fileID: -6005396097908946604, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
   Recipes:
-  - {fileID: 11400000, guid: 0355cc712f6936a4289afbcaf638a1e4, type: 2}
-  - {fileID: 11400000, guid: 5debe144a87213a42a52c443ff3d8876, type: 2}
-  - {fileID: 11400000, guid: c35cf0153285680499b2bb5cdf893b58, type: 2}
+  - {fileID: 11400000, guid: 876032f1f862eed4cb8f02f69b48f3ef, type: 2}
+  - {fileID: 11400000, guid: 280650e45f8bfe14c830730fc323216b, type: 2}
+  - {fileID: 11400000, guid: 8e8d722d741cebc4d84d88c4ade62394, type: 2}

@@ -181,6 +181,7 @@ public class InventoryUI : MonoBehaviour
     public void ChangeCategory()
     {
         Transform available = transform.Find("MainPanel/Craft/Available");
+        currentPage = 0;
         for (int i = 0; i < available.childCount; i++)
         {
             Destroy(available.GetChild(i).gameObject);

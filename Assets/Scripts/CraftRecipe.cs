@@ -15,36 +15,38 @@ public class CraftRecipe : ScriptableObject
     public bool isAvailable(Item[] inventory)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        int valid = 0;
         int index = 0;
-        Item currentIngridient = Ingridients[index];
-        int quantity = 0;
+        Item ing = Ingridients[index];
+        if(Ingridients.Length > 1)
+        {
+
+        }
+        int q = 0;
+        int valid = 0;
         for (int i = 0; i < inventory.Length; i++)
         {
-            if(valid == Ingridients.Length)
+            if(ing.item == inventory[i].item)
             {
-                break;
+                for (int x = 0; x < inventory[i].quantity; x++)
+                {
+                    if(q >= ing.quantity)
+                    {
+                        break;
+                    }
+                    q++;
+                }
             }
-            if(inventory[i].item != null && inventory[i].item == currentIngridient.item)
+            if (q >= ing.quantity)
             {
-                quantity += inventory[i].quantity;
-            }
-            else
-            {
-                continue;
-            }
-            if(quantity >= currentIngridient.quantity)
-            {
+                i = -1;
+                q = 0;
                 index++;
                 valid++;
-                quantity = 0;
-                if (valid == Ingridients.Length)
+                if (index >= Ingridients.Length)
                 {
                     break;
                 }
-                currentIngridient = Ingridients[index];
-                i = 0;
-                continue;
+                ing = Ingridients[index];
             }
         }
         if (workshop == Workshop.none)
@@ -97,43 +99,26 @@ public class CraftRecipe : ScriptableObject
     }
     public void Consume(Item[] inventory)
     {
-        Item ingridient = Ingridients[0];
-        int index = 0;
-        int remains = ingridient.quantity;
-        for (int i = inventory.Length - 1; i >= 0; i--)
+        for (int i = 0; i < Ingridients.Length; i++)
         {
-            if (inventory[i].quantity <= 0)
+            int quantity = Ingridients[i].quantity;
+            for (int x = 0; x < inventory.Length; x++)
             {
-                inventory[i].item = null;
-            }
-            if (remains <= 0)
-            {
-                i = inventory.Length - 1;
-                index++;
-                if(index > Ingridients.Length - 1)
+                if(Ingridients[i].item == inventory[x].item)
                 {
-                    return;
-                }
-                ingridient = Ingridients[index];
-            }
-            if(inventory[i].item != null && inventory[i].item == ingridient.item)
-            {
-                if(inventory[i].quantity > ingridient.quantity)
-                {
-                    remains = 0;
-                    inventory[i].quantity -= ingridient.quantity;
-                    continue;
-                }
-                else if (inventory[i].quantity > remains)
-                {
-                    inventory[i].quantity -= remains;
-                    remains = 0;
-                    continue;
-                }
-                else
-                {
-                    remains -= inventory[i].quantity;
-                    inventory[i].quantity = 0;
+                    for (int y = 0; y < inventory[x].quantity; y++)
+                    {
+                        if(quantity <= 0)
+                        {
+                            break;
+                        }
+                        quantity--;
+                        inventory[x].quantity--;
+                    }
+                    if(quantity <= 0)
+                    {
+                        break;
+                    }
                 }
             }
         }

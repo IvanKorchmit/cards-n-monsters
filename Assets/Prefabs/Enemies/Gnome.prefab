@@ -140,7 +140,9 @@ MonoBehaviour:
   helmet: {fileID: 0}
   chestplate: {fileID: 0}
   leggings: {fileID: 0}
-  inventory: []
+  inventory:
+  - item: {fileID: 11400000, guid: 04e4f805ff7e07f4795ea6ba5ac606f5, type: 2}
+    quantity: 2
 --- !u!1 &5582586885026875307
 GameObject:
   m_ObjectHideFlags: 0

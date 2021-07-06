@@ -304,8 +304,8 @@ MonoBehaviour:
   chestplate: {fileID: 0}
   leggings: {fileID: 0}
   inventory:
-  - item: {fileID: 11400000, guid: 3385394106b20b64db9cd30a8b684a43, type: 2}
-    quantity: 3
+  - item: {fileID: 11400000, guid: 148555f002496ec4bb4e70a7d222c5c3, type: 2}
+    quantity: 2
 --- !u!1001 &6521412964263280743
 PrefabInstance:
   m_ObjectHideFlags: 0

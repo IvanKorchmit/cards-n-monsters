@@ -56,6 +56,8 @@ public class RecipeUI : MonoBehaviour
             {
                 Player.DropItem(recipe.result);
             }
+            Debug.Log("Test");
+            GameObject.Find("Canvas").GetComponent<InventoryUI>().CheckRecipes();
         }
     }
 }

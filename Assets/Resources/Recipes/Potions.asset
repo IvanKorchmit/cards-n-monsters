@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 465c9be1495fad540a0b96db5514801c, type: 3}
-  m_Name: weapons
+  m_Name: Potions
   m_EditorClassIdentifier: 
-  name: Weapons
-  icon: {fileID: 6123003023063038561, guid: b693d3b090886b24b863487339cb9045, type: 3}
+  name: Potions
+  icon: {fileID: -1061600653231999548, guid: 46665df5046b51d45a5dcab6603edac0, type: 3}
   Recipes:
-  - {fileID: 11400000, guid: 0355cc712f6936a4289afbcaf638a1e4, type: 2}
-  - {fileID: 11400000, guid: 5debe144a87213a42a52c443ff3d8876, type: 2}
-  - {fileID: 11400000, guid: c35cf0153285680499b2bb5cdf893b58, type: 2}
+  - {fileID: 11400000, guid: dd1db740e5550d04782359fd95377f94, type: 2}

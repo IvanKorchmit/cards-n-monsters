@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6afd528902df7aa4d9d92982b580bf8f, type: 3}
-  m_Name: CopperSword
+  m_Name: CopperBar
   m_EditorClassIdentifier: 
-  workshop: 1
+  workshop: 2
   Ingridients:
-  - item: {fileID: 11400000, guid: 6da483a1307639d4b82ca7a6c734645f, type: 2}
+  - item: {fileID: 11400000, guid: 148555f002496ec4bb4e70a7d222c5c3, type: 2}
     quantity: 2
-  RequiredLevel: 5
+  RequiredLevel: 0
   result:
-    item: {fileID: 11400000, guid: ce0b0c20036ca184e8f54c3c5d1063bc, type: 2}
+    item: {fileID: 11400000, guid: 6da483a1307639d4b82ca7a6c734645f, type: 2}
     quantity: 1
