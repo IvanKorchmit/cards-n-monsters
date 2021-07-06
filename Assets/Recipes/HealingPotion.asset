@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afd528902df7aa4d9d92982b580bf8f, type: 3}
   m_Name: HealingPotion
   m_EditorClassIdentifier: 
+  workshop: 3
   Ingridients:
   - item: {fileID: 11400000, guid: 3385394106b20b64db9cd30a8b684a43, type: 2}
-    quantity: 10
+    quantity: 2
   RequiredLevel: 5
   result:
     item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}

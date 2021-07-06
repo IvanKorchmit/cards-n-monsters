@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Slot
   - NPC
+  - Anvil
+  - Furnace
+  - Boiler
   layers:
   - Default
   - TransparentFX

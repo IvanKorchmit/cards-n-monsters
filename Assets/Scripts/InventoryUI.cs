@@ -158,9 +158,9 @@ public class InventoryUI : MonoBehaviour
                     npc.inventory[i].item = null;
                 }
                 Image icon = containerWindow.GetChild(i).Find("Icon")?.gameObject.GetComponent<Image>();
-                TextMeshProUGUI quantity = containerWindow.GetChild(i).Find("Icon/Quantity").GetComponent<TextMeshProUGUI>();
                 if (icon != null)
                 {
+                    TextMeshProUGUI quantity = containerWindow.GetChild(i).Find("Icon/Quantity").GetComponent<TextMeshProUGUI>();
                     Item it = npc.inventory[i];
                     quantity.text = it.quantity > 1 ? $"{it.quantity}" : "";
 

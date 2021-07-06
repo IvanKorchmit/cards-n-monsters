@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        GetComponent<AudioSource>().volume = Settings.musicVolume;
     }
     private void FixedUpdate()
     {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afd528902df7aa4d9d92982b580bf8f, type: 3}
   m_Name: IronSword
   m_EditorClassIdentifier: 
+  workshop: 1
   Ingridients:
   - item: {fileID: 11400000, guid: 3385394106b20b64db9cd30a8b684a43, type: 2}
     quantity: 2

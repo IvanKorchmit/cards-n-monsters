@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 749c7026de183c147a1a24d09de11f8a, type: 3}
-  m_Name: iron_bar
+  m_Name: Sapphire
   m_EditorClassIdentifier: 
-  name: Iron Bar
-  description: Ingridient, used for crafting iron stuff.
-  sprite: {fileID: -6005396097908946604, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
-  cost: 5
-  id: 6
-  stack: 10
+  name: Sapphire
+  description: Shiny!
+  sprite: {fileID: -312318039103235053, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
+  cost: 20
+  id: 0
+  stack: 5

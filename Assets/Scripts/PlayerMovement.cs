@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMove;
     private Rigidbody2D rb;
     private Animator animator;
+    private InventoryUI iUI;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        iUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
     }
     private void FixedUpdate()
     {
@@ -33,6 +35,20 @@ public class PlayerMovement : MonoBehaviour
         if(rawMovement != Vector2.zero)
         {
             lastMove = rawMovement;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Anvil") || collision.CompareTag("Furnace") || collision.CompareTag("Boiler"))
+        {
+            iUI.CheckRecipes();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Anvil") || collision.CompareTag("Furnace") || collision.CompareTag("Boiler"))
+        {
+            iUI.CheckRecipes();
         }
     }
 }

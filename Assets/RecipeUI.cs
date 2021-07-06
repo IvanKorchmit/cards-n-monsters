@@ -7,7 +7,10 @@ public class RecipeUI : MonoBehaviour
 {
     public CraftRecipe recipe;
     public GameObject ingridientIcon;
-    public Stats Player;
+    private Stats Player;
+    public Sprite anvil;
+    public Sprite boiler;
+    public Sprite furnace;
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
@@ -17,6 +20,26 @@ public class RecipeUI : MonoBehaviour
     {
         Transform ingridients = transform.Find("Ingridients");
         transform.Find("Result").GetComponent<Image>().sprite = recipe.result.item.sprite;
+        switch (recipe.workshop)
+        {
+            case CraftRecipe.Workshop.none:
+                Destroy(transform.Find("Workshop").gameObject);
+                break;
+            case CraftRecipe.Workshop.anvil:
+                transform.Find("Workshop").GetComponent<Image>().sprite = anvil;
+
+                break;
+            case CraftRecipe.Workshop.furnace:
+                transform.Find("Workshop").GetComponent<Image>().sprite = furnace;
+
+                break;
+            case CraftRecipe.Workshop.boiler:
+                transform.Find("Workshop").GetComponent<Image>().sprite = boiler;
+
+                break;
+            default:
+                break;
+        }
         for (int i = 0; i < recipe.Ingridients.Length; i++)
         {
             Image ingridientIcon = Instantiate(this.ingridientIcon, ingridients).GetComponent<Image>();

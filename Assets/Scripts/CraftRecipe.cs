@@ -4,11 +4,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Recipes/Recipe")]
 public class CraftRecipe : ScriptableObject
 {
+    public enum Workshop
+    {
+        none,anvil,furnace,boiler
+    }
+    public Workshop workshop = Workshop.none;
     public Item[] Ingridients;
     public int RequiredLevel;
     public Item result;
     public bool isAvailable(Item[] inventory)
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         int valid = 0;
         int index = 0;
         Item currentIngridient = Ingridients[index];
@@ -41,7 +47,53 @@ public class CraftRecipe : ScriptableObject
                 continue;
             }
         }
-        return valid == Ingridients.Length;
+        if (workshop == Workshop.none)
+        {
+            return valid == Ingridients.Length;
+        }
+        else if (workshop == Workshop.furnace)
+        {
+            bool atFurnace = false;
+            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, 3f, Vector2.zero, 0);
+            foreach (var r in ray)
+            {
+                if(r.collider != null && r.collider.CompareTag("Furnace"))
+                {
+                    atFurnace = true;
+                    break;
+                }
+            }
+            return valid == Ingridients.Length && atFurnace;
+        }
+        else if (workshop == Workshop.anvil)
+        {
+            bool atAnvil = false;
+            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, 3f, Vector2.zero, 0);
+            foreach (var r in ray)
+            {
+                if (r.collider != null && r.collider.CompareTag("Anvil"))
+                {
+                    atAnvil = true;
+                    break;
+                }
+            }
+            return valid == Ingridients.Length && atAnvil;
+        }
+        else if (workshop == Workshop.boiler)
+        {
+            bool atBoiler = false;
+            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, 3f, Vector2.zero, 0);
+            foreach (var r in ray)
+            {
+                if (r.collider != null && r.collider.CompareTag("Boiler"))
+                {
+                    atBoiler = true;
+                    break;
+                }
+            }
+            return valid == Ingridients.Length && atBoiler;
+        }
+        return false;
     }
     public void Consume(Item[] inventory)
     {
