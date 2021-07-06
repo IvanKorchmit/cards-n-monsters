@@ -16,6 +16,7 @@ public class Stats : MonoBehaviour, IDamagable
     private Rigidbody2D rb;
     private Animator animator;
     private InventoryUI invUI;
+    private Vector2 initPos;
     public bool AddItem(Item item)
     {
         for (int i = 0; i < inventory.Length; i++)
@@ -94,6 +95,10 @@ public class Stats : MonoBehaviour, IDamagable
             drop.GetComponent<PickableItem>().item = item;
         }
     }
+    private void Awake()
+    {
+        initPos = gameObject.transform.position;
+    }
     public int MaxHealth => maxHealth;
     public int Health => health;
     private void Start()
@@ -124,7 +129,7 @@ public class Stats : MonoBehaviour, IDamagable
             {
                 PlayerLevel.GainXP(Random.Range(30, 60));
                 BaseEnemyAI enemAI = GetComponent<BaseEnemyAI>();
-                if (enemAI.PerkStealingGuaranteed)
+                if (enemAI != null && enemAI.PerkStealingGuaranteed)
                 {
                     GameObject.Find("Player").GetComponent<PlayerPerks>().perk = enemAI.perk;
                 }
@@ -142,11 +147,21 @@ public class Stats : MonoBehaviour, IDamagable
             }
             else
             {
+                owner.GetComponent<Stats>().StartCoroutine(owner.GetComponent<Stats>().Respawn(gameObject));
                 gameObject.SetActive(false);
             }
         }
     }
-
+    public IEnumerator Respawn(GameObject player)
+    {
+        yield return new WaitForSeconds(3);
+        GameObject canvas = GameObject.Find("Canvas");
+        canvas.SetActive(false);
+        canvas.SetActive(true);
+        player.transform.position = player.GetComponent<Stats>().initPos;
+        player.GetComponent<Stats>().health = player.GetComponent<Stats>().MaxHealth;
+        player.SetActive(true);
+    }
     public void Heal(int heal)
     {
         health += heal;

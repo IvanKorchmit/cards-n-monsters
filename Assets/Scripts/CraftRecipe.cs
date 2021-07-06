@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Recipes/Recipe")]
 public class CraftRecipe : ScriptableObject
 {
+    private const float RADIUS = 2f;
     public enum Workshop
     {
         none,anvil,furnace,boiler
@@ -17,10 +18,6 @@ public class CraftRecipe : ScriptableObject
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         int index = 0;
         Item ing = Ingridients[index];
-        if(Ingridients.Length > 1)
-        {
-
-        }
         int q = 0;
         int valid = 0;
         for (int i = 0; i < inventory.Length; i++)
@@ -32,7 +29,7 @@ public class CraftRecipe : ScriptableObject
                     if(q >= ing.quantity)
                     {
                         break;
-                    }
+                    }   
                     q++;
                 }
             }
@@ -56,7 +53,7 @@ public class CraftRecipe : ScriptableObject
         else if (workshop == Workshop.furnace)
         {
             bool atFurnace = false;
-            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, 3f, Vector2.zero, 0);
+            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, RADIUS, Vector2.zero, 0);
             foreach (var r in ray)
             {
                 if(r.collider != null && r.collider.CompareTag("Furnace"))
@@ -70,7 +67,7 @@ public class CraftRecipe : ScriptableObject
         else if (workshop == Workshop.anvil)
         {
             bool atAnvil = false;
-            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, 3f, Vector2.zero, 0);
+            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, RADIUS, Vector2.zero, 0);
             foreach (var r in ray)
             {
                 if (r.collider != null && r.collider.CompareTag("Anvil"))
@@ -84,7 +81,7 @@ public class CraftRecipe : ScriptableObject
         else if (workshop == Workshop.boiler)
         {
             bool atBoiler = false;
-            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, 3f, Vector2.zero, 0);
+            RaycastHit2D[] ray = Physics2D.CircleCastAll(player.transform.position, RADIUS, Vector2.zero, 0);
             foreach (var r in ray)
             {
                 if (r.collider != null && r.collider.CompareTag("Boiler"))
@@ -106,7 +103,7 @@ public class CraftRecipe : ScriptableObject
             {
                 if(Ingridients[i].item == inventory[x].item)
                 {
-                    for (int y = 0; y < inventory[x].quantity; y++)
+                    for (int y = 0; y <= inventory[x].quantity; y++)
                     {
                         if(quantity <= 0)
                         {

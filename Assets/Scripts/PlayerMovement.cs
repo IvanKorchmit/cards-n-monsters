@@ -44,10 +44,11 @@ public class PlayerMovement : MonoBehaviour
             iUI.CheckRecipes();
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private IEnumerator OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Anvil") || collision.CompareTag("Furnace") || collision.CompareTag("Boiler"))
         {
+            yield return new WaitForSeconds(0.2f);
             iUI.CheckRecipes();
         }
     }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Raw Black Metal
   description: Valuable raw item. Better to be smelt and crafted to something useful!
-  sprite: {fileID: -707356787479530816, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
+  sprite: {fileID: -5592233713614919293, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
   cost: 16
   id: 0
   stack: 10

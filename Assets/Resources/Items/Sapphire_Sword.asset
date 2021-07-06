@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749c7026de183c147a1a24d09de11f8a, type: 3}
-  m_Name: raw_tin
+  m_Script: {fileID: 11500000, guid: f9f21170acb764141b48471f4318debb, type: 3}
+  m_Name: Sapphire_Sword
   m_EditorClassIdentifier: 
-  name: Raw Tin Ore
-  description: Useful for bronze
-  sprite: {fileID: -5730257522194570966, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
-  cost: 2
-  id: 10
-  stack: 10
+  name: 
+  description: 
+  sprite: {fileID: 0}
+  cost: 0
+  id: 0
+  stack: 0
+  damage: 0
+  distance: 0

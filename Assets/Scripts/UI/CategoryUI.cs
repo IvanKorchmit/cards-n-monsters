@@ -14,6 +14,7 @@ public class CategoryUI : MonoBehaviour
     public void OnClick()
     {
         InventoryUI.currentCategory = cat;
+        GameObject.Find("Canvas").GetComponent<InventoryUI>().CheckRecipes();
     }
 
 }

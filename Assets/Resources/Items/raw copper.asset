@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Raw Copper
   description: The material itself is meh, but useful for bronze
-  sprite: {fileID: -5730257522194570966, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
+  sprite: {fileID: 8329870673661554597, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
   cost: 3
   id: 7
   stack: 10

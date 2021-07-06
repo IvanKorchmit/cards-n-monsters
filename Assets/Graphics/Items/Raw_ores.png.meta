@@ -4,19 +4,19 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8329870673661554597
-    second: Raw_ores_0
+    second: copper_ore
   - first:
       213: -5730257522194570966
-    second: Raw_ores_1
+    second: tin_ore
   - first:
       213: -2905485467000124020
-    second: Raw_ores_2
+    second: iron_ore
   - first:
       213: -7842767717587253991
-    second: Raw_ores_3
+    second: gold_ore
   - first:
       213: -5592233713614919293
-    second: Raw_ores_4
+    second: black_ore
   - first:
       213: -707356787479530816
     second: Raw_ores_5
@@ -109,15 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Raw_ores_0
+      name: copper_ore
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 15
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,15 +130,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raw_ores_1
+      name: tin_ore
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
+        x: 16
+        y: 15
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,15 +151,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raw_ores_2
+      name: iron_ore
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
+        x: 32
+        y: 15
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,15 +172,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raw_ores_3
+      name: gold_ore
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
+        x: 48
+        y: 15
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,15 +193,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raw_ores_4
+      name: black_ore
       rect:
         serializedVersion: 2
-        x: 68
-        y: 0
+        x: 64
+        y: 15
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,27 +209,6 @@ TextureImporter:
       bones: []
       spriteID: 389e40ff0156462b0800000000000000
       internalID: -5592233713614919293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Raw_ores_5
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c232d0efb6fe26f0800000000000000
-      internalID: -707356787479530816
       vertices: []
       indices: 
       edges: []
