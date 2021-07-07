@@ -172,11 +172,27 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
                         if (Player.inventory[origin] == dragItem)
                         {
                             Player.DropItem(origin, dragItem.quantity);
+                            if (TryGetComponent(out SoundEvents sound))
+                            {
+                                sound.PlayPitched(SoundsStatic.PickUp);
+                            }
+                            else
+                            {
+                                gameObject.AddComponent<SoundEvents>().PlayPitched(SoundsStatic.PickUp);
+                            }
                         }
                         else
                         {
                             Player.inventory[origin].quantity -= dragItem.quantity;
                             Player.DropItem(dragItem);
+                            if (TryGetComponent(out SoundEvents sound))
+                            {
+                                sound.PlayPitched(SoundsStatic.PickUp);
+                            }
+                            else
+                            {
+                                gameObject.AddComponent<SoundEvents>().PlayPitched(SoundsStatic.PickUp);
+                            }
                         }
                         break;
                 }

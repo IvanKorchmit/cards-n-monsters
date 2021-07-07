@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
+    public AudioClip testClip;
     public string sceneName;
     public void LoadScene()
     {
@@ -17,8 +18,8 @@ public class ScenesManager : MonoBehaviour
 
     public void ChangeVolumeSFX(System.Single value)
     {
-        Debug.Log(value);
         Settings.SFX = value;
+        GetComponent<SoundEvents>().Play(testClip);
     }
     public void ChangeVolumeMusic(System.Single value)
     {

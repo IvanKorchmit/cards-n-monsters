@@ -20,6 +20,7 @@ public class PickableItem : MonoBehaviour
         {
             if (collision.GetComponent<Stats>().AddItem(item))
             {
+                GetComponent<SoundEvents>().PlayPitched(SoundsStatic.PickUp);
                 Destroy(gameObject);
             }
         }

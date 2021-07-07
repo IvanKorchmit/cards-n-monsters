@@ -12,7 +12,7 @@ public class SoundEvents : MonoBehaviour
         audio.volume = 1.0f * Settings.SFX;
         audio.Play();
         audio.transform.position = Camera.main.transform.position;
-        Destroy(audio, clip.length);
+        Destroy(audio.gameObject, clip.length);
     }
     public void Play(AudioClip clip)
     {
@@ -21,6 +21,6 @@ public class SoundEvents : MonoBehaviour
         audio.volume = 1.0f * Settings.SFX;
         audio.Play();
         audio.transform.position = Camera.main.transform.position;
-        Destroy(audio, clip.length);
+        Destroy(audio.gameObject, clip.length);
     }
 }

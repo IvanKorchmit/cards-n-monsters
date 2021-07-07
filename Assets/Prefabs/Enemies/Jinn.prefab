@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 300
   maxHealth: 0
   Money: 0
   dropableItem: {fileID: 8990615170850155902, guid: b61e0126471080a4ab3ce787aed39338, type: 3}
@@ -238,7 +238,9 @@ MonoBehaviour:
   helmet: {fileID: 0}
   chestplate: {fileID: 0}
   leggings: {fileID: 0}
-  inventory: []
+  inventory:
+  - item: {fileID: 11400000, guid: 91c7472fff0c1a74991dbbc3886cd8ce, type: 2}
+    quantity: 1
 --- !u!50 &1110176797871475797
 Rigidbody2D:
   serializedVersion: 4

@@ -12,6 +12,6 @@ public class DecreaseVolume : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        audio.volume -= Time.deltaTime;
+        audio.volume -= Time.deltaTime / (stateInfo.length * Settings.musicVolume);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 #if (UNITY_EDITOR)
 using UnityEngine;
 using UnityEditor;
@@ -13,10 +11,10 @@ public class ReassignID : EditorWindow
     }
     private void OnGUI()
     {
-        GUILayout.Label("ID Reassigner", EditorStyles.boldLabel);
-        if(GUILayout.Button("Reassign Item IDs"))
+        GUILayout.Label("ID Reassigner", EditorStyles.boldLabel); 
+        if (GUILayout.Button("Reassign Item IDs"))
         {
-            Reassign();
+            Reassign(); 
         }
     }
     private void Reassign()

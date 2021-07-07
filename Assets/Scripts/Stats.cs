@@ -114,6 +114,14 @@ public class Stats : MonoBehaviour, IDamagable
     }
     public void Damage(int damage, GameObject owner, float power)
     {
+        if(TryGetComponent(out SoundEvents sound))
+        {
+            sound.PlayPitched(SoundsStatic.Hit);
+        }
+        else
+        {
+            gameObject.AddComponent<SoundEvents>().PlayPitched(SoundsStatic.Hit);
+        }
         int helmet = this.helmet?.defense ?? 1;
         int chestplate = this.chestplate?.defense ?? 1;
         int leggings = this.leggings?.defense ?? 1;
@@ -151,7 +159,8 @@ public class Stats : MonoBehaviour, IDamagable
             }
             else
             {
-                owner.GetComponent<Stats>().StartCoroutine(owner.GetComponent<Stats>().Respawn(gameObject));
+                GameObject handler = new GameObject("Handler");
+                handler.AddComponent<Stats>().StartCoroutine(handler.GetComponent<Stats>().Respawn(gameObject));
                 gameObject.GetComponent<Animator>().enabled = false;
                 gameObject.SetActive(false);
             }
@@ -167,6 +176,7 @@ public class Stats : MonoBehaviour, IDamagable
         player.GetComponent<Stats>().health = player.GetComponent<Stats>().MaxHealth;
         player.GetComponent<Animator>().enabled = true;
         player.SetActive(true);
+        Destroy(gameObject);
     }
     public void Heal(int heal)
     {
