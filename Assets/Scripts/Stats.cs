@@ -152,6 +152,7 @@ public class Stats : MonoBehaviour, IDamagable
             else
             {
                 owner.GetComponent<Stats>().StartCoroutine(owner.GetComponent<Stats>().Respawn(gameObject));
+                gameObject.GetComponent<Animator>().enabled = false;
                 gameObject.SetActive(false);
             }
         }
@@ -164,6 +165,7 @@ public class Stats : MonoBehaviour, IDamagable
         canvas.SetActive(true);
         player.transform.position = player.GetComponent<Stats>().initPos;
         player.GetComponent<Stats>().health = player.GetComponent<Stats>().MaxHealth;
+        player.GetComponent<Animator>().enabled = true;
         player.SetActive(true);
     }
     public void Heal(int heal)
