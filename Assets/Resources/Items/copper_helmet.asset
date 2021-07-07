@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d5a38e9a8ba8f41977b3aea21ef998, type: 3}
   m_Name: copper_helmet
   m_EditorClassIdentifier: 
-  name: Copper Helmet
-  description: Head protection of soft metal!
-  sprite: {fileID: 0}
+  name: Copper Chestplate
+  description: Chest protection of soft metal!
+  sprite: {fileID: 7926149223818998749, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
   cost: 0
   id: 0
-  stack: 0
-  defense: 0
+  stack: 1
+  defense: 2

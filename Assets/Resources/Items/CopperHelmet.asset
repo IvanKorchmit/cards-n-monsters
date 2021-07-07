@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a5d245070603d4eb4008295c6872ba, type: 3}
-  m_Name: Teleport
+  m_Script: {fileID: 11500000, guid: 6655ca1ccce2abf4fbb6868a11fdf3bf, type: 3}
+  m_Name: CopperHelmet
   m_EditorClassIdentifier: 
-  icon: {fileID: 6220208007999549204, guid: 66faaa8f0e777784d847df4adf8e040d, type: 3}
-  name: 
-  damage: 25
+  name: Copper Helmet
+  description: Weak head protection
+  sprite: {fileID: 4673541879292138243, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
+  cost: 4
+  id: 0
+  stack: 1
+  defense: 2

@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9de50b3b9827f348bf9762e0548f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 5
   Cooldown: 5
   isBusy: 0
 --- !u!1 &4700626464196941230

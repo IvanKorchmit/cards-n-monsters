@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6afd528902df7aa4d9d92982b580bf8f, type: 3}
-  m_Name: HealingPotion
+  m_Name: blackmetalbar
   m_EditorClassIdentifier: 
-  workshop: 3
+  workshop: 2
   Ingridients:
-  - item: {fileID: 11400000, guid: b61bed035b1884c48929b5fe81f0dca5, type: 2}
-    quantity: 1
-  - item: {fileID: 11400000, guid: da1d468e802485f44852133657e040e7, type: 2}
-    quantity: 1
-  RequiredLevel: 5
+  - item: {fileID: 11400000, guid: 879fd504efab33c40b67e0799a7a4372, type: 2}
+    quantity: 2
+  RequiredLevel: 10
   result:
-    item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}
+    item: {fileID: 11400000, guid: 2f6c49515d520ec4e8b52ad573c81741, type: 2}
     quantity: 1

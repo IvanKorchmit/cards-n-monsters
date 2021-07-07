@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5cba64f27ced94e9476941cacc3df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perk: {fileID: 11400000, guid: a10413d7f97145047b1f6c818fee8fff, type: 2}
+  perk: {fileID: 0}
 --- !u!95 &6695398177062320908
 Animator:
   serializedVersion: 3
@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40386e44a9fa23469c235bc13c97989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &8551750721255743287
 GameObject:
   m_ObjectHideFlags: 0

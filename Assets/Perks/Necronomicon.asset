@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4f79ee565a8774ea4f3b138bedf618, type: 3}
   m_Name: Necronomicon
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -6555575649291838755, guid: 66faaa8f0e777784d847df4adf8e040d, type: 3}
   name: 
   Skeleton: {fileID: 4458833413107089295, guid: 9c68524b71392814ab8d0c2e78068eb5, type: 3}
   playerLayer: 8

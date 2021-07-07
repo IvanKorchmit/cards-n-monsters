@@ -42,7 +42,7 @@ public class npcAI : MonoBehaviour
         angle = angle < 0 ? angle + 360 : angle;
 
         animator.SetInteger("Angle", angle);
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 1000 * Time.deltaTime; i++)
         {
             if (rb.velocity.magnitude <= 0.5f && !isBusy)
             {

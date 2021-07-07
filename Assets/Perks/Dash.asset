@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543e0aa475f06af44a9e2250f4220e2c, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
+  icon: {fileID: -7557494978891415441, guid: 66faaa8f0e777784d847df4adf8e040d, type: 3}
+  name: 

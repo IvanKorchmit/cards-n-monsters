@@ -204,7 +204,7 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (dragItem.item == null || dragItem.item == null)
+        if (dragItem.item == null)
         {
             return;
         }
@@ -278,25 +278,25 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
                                 }
                             }
                         }
-                        else if (comingFrom == SpecializedSlot.weapon && temp.item is Weapon || temp.item == null)
-                        {
+                        else if (comingFrom == SpecializedSlot.weapon && (temp.item is Weapon || temp.item == null))
+                        {   
                             Player.inventory[slotNumber] = dragItem;
                             Weapon weap = temp.item as Weapon;
                             Player.weapon = weap;
                         }
-                        else if (comingFrom == SpecializedSlot.helmet && temp.item is Helmet || temp.item == null)
+                        else if (comingFrom == SpecializedSlot.helmet && (temp.item is Helmet || temp.item == null))
                         {
                             Player.inventory[slotNumber] = dragItem;
                             Helmet hel = temp.item as Helmet;
                             Player.helmet = hel;
                         }
-                        else if (comingFrom == SpecializedSlot.chest && temp.item is Chestplate || temp.item == null)
+                        else if (comingFrom == SpecializedSlot.chest && (temp.item is Chestplate || temp.item == null))
                         {
                             Player.inventory[slotNumber] = dragItem;
                             Chestplate ch = temp.item as Chestplate;
                             Player.chestplate = ch;
                         }
-                        else if (comingFrom == SpecializedSlot.leggings && temp.item is Leggings || temp.item == null)
+                        else if (comingFrom == SpecializedSlot.leggings && (temp.item is Leggings || temp.item == null))
                         {
                             Player.inventory[slotNumber] = dragItem;
                             Leggings lg = temp.item as Leggings;

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8164ceacbf4f9e4facc08bcefe2611a, type: 3}
   m_Name: Bombard
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -1636742031616846006, guid: 66faaa8f0e777784d847df4adf8e040d, type: 3}
   name: 
   bomb: {fileID: 7705855057653252425, guid: ffa02329fbf5ebf47b303497cffc187d, type: 3}
