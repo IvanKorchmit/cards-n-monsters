@@ -77,7 +77,7 @@ public class InventoryUI : MonoBehaviour
     }
     public void NextPage()
     {
-        currentPage = currentPage + 1 < currentCategory.Recipes.Length ? currentPage + 1 : currentCategory.Recipes.Length - 1;
+        currentPage = currentPage + 1 < currentCategory.Recipes.Length ? currentPage + 1 : currentCategory.Recipes.Length;
         CheckRecipes();
     }
     public void PreviousPage()
@@ -195,6 +195,7 @@ public class InventoryUI : MonoBehaviour
         Transform available = transform.Find("MainPanel/Craft/Available");
         for (int x = currentPage; available.childCount < 2; x++)
         {
+            Start:
             if (x >= currentCategory.Recipes.Length)
             {
                 break;
@@ -210,11 +211,12 @@ public class InventoryUI : MonoBehaviour
                 int childCount = available.childCount;
                 for (int i = 0; i < childCount; i++)
                 {
-                    Transform child = available.GetChild(i);
+                    Transform child = available.GetChild(0);
                     if (child.GetComponent<RecipeUI>().recipe == craft)
                     {
                         child.SetParent(null);
                         Destroy(child.gameObject);
+                        
                     }
                 }
             }

@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f21170acb764141b48471f4318debb, type: 3}
-  m_Name: TinSword
+  m_Script: {fileID: 11500000, guid: 6655ca1ccce2abf4fbb6868a11fdf3bf, type: 3}
+  m_Name: black_helmet
   m_EditorClassIdentifier: 
-  name: Copper Sword
-  description: Weak sword, good for start.
-  sprite: {fileID: 6123003023063038561, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 18
+  name: Black Metal Helmet
+  description: XP
+  sprite: {fileID: -64774034021574184, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
+  cost: 0
   id: 0
   stack: 1
-  damage: 5
-  distance: 1.25
+  defense: 20
