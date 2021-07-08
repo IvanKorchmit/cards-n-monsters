@@ -13,6 +13,9 @@ public class CardUI : MonoBehaviour
     }
     private void OnGUI()
     {
-        img.sprite = player.perk.icon;
+        if (player.perk != null)
+        {
+            img.sprite = player?.perk.icon ?? null;
+        }
     }
 }

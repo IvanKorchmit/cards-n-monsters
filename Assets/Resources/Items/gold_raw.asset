@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749c7026de183c147a1a24d09de11f8a, type: 3}
+  m_Name: gold_raw
+  m_EditorClassIdentifier: 
+  name: Raw Gold Ore
+  description: Economy's essence of life!
+  sprite: {fileID: -7842767717587253991, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
+  cost: 0
+  id: 0
+  stack: 10

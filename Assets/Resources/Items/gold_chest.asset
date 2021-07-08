@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d5a38e9a8ba8f41977b3aea21ef998, type: 3}
-  m_Name: copper_helmet
+  m_Name: gold_chest
   m_EditorClassIdentifier: 
-  name: Copper Chestplate
-  description: Chest protection of soft metal!
-  sprite: {fileID: 7926149223818998749, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
+  name: Gold Chestplate
+  description: Go on, king!
+  sprite: {fileID: -2901073741589171785, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
   cost: 0
   id: 0
   stack: 1
-  defense: 2
+  defense: 6

@@ -126,8 +126,8 @@ public class Stats : MonoBehaviour, IDamagable
         int chestplate = this.chestplate?.defense ?? 1;
         int leggings = this.leggings?.defense ?? 1;
         int total = helmet * chestplate * leggings;
-        damage /= total;
-        damage = damage == 0 ? 1 : damage;
+        damage -= total / 4;
+        damage = damage <= 0 ? 1 : damage;
         health -= damage;
         if (animator != null)
         {

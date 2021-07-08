@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749c7026de183c147a1a24d09de11f8a, type: 3}
+  m_Name: gold_bar
+  m_EditorClassIdentifier: 
+  name: Gold Bar
+  description: World rolls around it.
+  sprite: {fileID: 7886494392036789482, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
+  cost: 0
+  id: 0
+  stack: 10

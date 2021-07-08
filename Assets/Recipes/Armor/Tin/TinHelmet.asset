@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6afd528902df7aa4d9d92982b580bf8f, type: 3}
-  m_Name: SapphireSword
+  m_Name: TinHelmet
   m_EditorClassIdentifier: 
-  workshop: 2
+  workshop: 1
   Ingridients:
-  - item: {fileID: 11400000, guid: 91c7472fff0c1a74991dbbc3886cd8ce, type: 2}
+  - item: {fileID: 11400000, guid: 3ce2ad2bb8ac10247a45111436cfa5bb, type: 2}
     quantity: 2
-  RequiredLevel: 10
+  RequiredLevel: 0
   result:
-    item: {fileID: 11400000, guid: de43d63d5d01a0345af71a4f7caa5367, type: 2}
+    item: {fileID: 11400000, guid: 944e2e83354f39b48b78981ea863b1f8, type: 2}
     quantity: 1

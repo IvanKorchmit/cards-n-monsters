@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c9be1495fad540a0b96db5514801c, type: 3}
+  m_Name: armor
+  m_EditorClassIdentifier: 
+  name: Armory
+  icon: {fileID: 5935675862632836086, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
+  Recipes:
+  - {fileID: 11400000, guid: b2777c7a277ae40469c2bc8fe56f4182, type: 2}
+  - {fileID: 11400000, guid: 6050bd9d98688b14baf7f6d957560a3a, type: 2}
+  - {fileID: 11400000, guid: 1f7c785dd6f43e64d856980390f1c39f, type: 2}
+  - {fileID: 11400000, guid: e2d7dc906211c2146984085b6660f9de, type: 2}
+  - {fileID: 11400000, guid: 8af6c350e2cd1834baf5cb98220ed70e, type: 2}
+  - {fileID: 11400000, guid: 383366bc0e1d43448a81c51da0bd7ab5, type: 2}
+  - {fileID: 11400000, guid: 64a342fa9900b6b438caa3cfce9a9aae, type: 2}
+  - {fileID: 11400000, guid: 79c55489da6112a4c930f9f9f5ec1ffa, type: 2}
+  - {fileID: 11400000, guid: a5848fc0b190dc349a4d9e63f8a67054, type: 2}
