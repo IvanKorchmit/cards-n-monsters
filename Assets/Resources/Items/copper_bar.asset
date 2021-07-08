@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: copper_bar
   m_EditorClassIdentifier: 
   name: Copper Bar
-  description: 
+  description: Good for beginning, but you could do something more out of it!
   sprite: {fileID: -6352421912928365478, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
-  cost: 3
-  id: 1
+  cost: 1
+  id: 11
   stack: 10

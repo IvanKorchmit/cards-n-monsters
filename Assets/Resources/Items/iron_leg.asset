@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Iron Leggings
   description: Something is really serious
   sprite: {fileID: -1617794363444318258, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 10
+  id: 28
   stack: 1
   defense: 4

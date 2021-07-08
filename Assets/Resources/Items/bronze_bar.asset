@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Bronze Bar
   description: Better than iron
   sprite: {fileID: 2314405913165404196, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
-  cost: 4
-  id: 0
+  cost: 6
+  id: 5
   stack: 10

@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Gold Bar
   description: World rolls around it.
   sprite: {fileID: 7886494392036789482, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
-  cost: 0
-  id: 0
+  cost: 10
+  id: 16
   stack: 10

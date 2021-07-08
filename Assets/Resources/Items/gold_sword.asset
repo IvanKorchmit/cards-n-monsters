@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Gold Sword
   description: You go, king!
   sprite: {fileID: 4978276593797209138, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 0
-  id: 0
+  cost: 25
+  id: 21
   stack: 1
-  damage: 20
-  distance: 1.6
+  damage: 30
+  distance: 2

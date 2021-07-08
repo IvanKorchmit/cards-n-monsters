@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Copper Sword
   description: Weak sword, good for start.
   sprite: {fileID: 4942803658038726614, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 18
-  id: 0
+  cost: 4
+  id: 10
   stack: 1
   damage: 5
   distance: 1.25

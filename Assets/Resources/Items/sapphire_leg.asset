@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Sapphire Leggings
   description: Impressive!
   sprite: {fileID: 6528657237286112955, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 40
+  id: 36
   stack: 1
   defense: 10

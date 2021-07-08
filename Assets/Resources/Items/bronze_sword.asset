@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Bronze Sword
   description: Sharper
   sprite: {fileID: 4942803658038726614, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 11
-  id: 0
+  cost: 12
+  id: 9
   stack: 1
   damage: 20
-  distance: 1.5
+  distance: 1.75

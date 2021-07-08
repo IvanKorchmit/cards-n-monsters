@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Gold Leggins
   description: AAAAAAAAAAAAA!!!!
   sprite: {fileID: -4075307207547835167, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 15
+  id: 19
   stack: 1
   defense: 6

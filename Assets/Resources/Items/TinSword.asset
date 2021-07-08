@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f21170acb764141b48471f4318debb, type: 3}
   m_Name: TinSword
   m_EditorClassIdentifier: 
-  name: Copper Sword
+  name: Tin  Sword
   description: Weak sword, good for start.
   sprite: {fileID: 6123003023063038561, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 18
-  id: 0
+  cost: 4
+  id: 42
   stack: 1
   damage: 5
   distance: 1.25

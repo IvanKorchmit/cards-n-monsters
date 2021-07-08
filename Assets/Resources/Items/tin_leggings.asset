@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Tin Leggings
   description: Same as copper
   sprite: {fileID: -7112477390338708479, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 4
+  id: 41
   stack: 0
   defense: 0

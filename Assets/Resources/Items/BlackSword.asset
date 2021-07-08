@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Black Metal Sword
   description: Rawr!
   sprite: {fileID: 8289387723579576647, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 160
-  id: 0
+  cost: 120
+  id: 4
   stack: 1
   damage: 70
   distance: 3

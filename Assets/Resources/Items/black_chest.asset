@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Sapphire Chest
   description: Shiny and durable!
   sprite: {fileID: -949447489718580930, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
+  cost: 180
   id: 0
   stack: 1
   defense: 20

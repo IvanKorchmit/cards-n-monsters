@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Sapphire Sword
   description: Woah!
   sprite: {fileID: -9004990608046106943, guid: b693d3b090886b24b863487339cb9045, type: 3}
-  cost: 120
-  id: 0
+  cost: 40
+  id: 37
   stack: 1
-  damage: 30
+  damage: 40
   distance: 2

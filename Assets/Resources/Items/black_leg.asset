@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Black Metal Leggings
   description: Full protection
   sprite: {fileID: -2775804528520667304, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 120
+  id: 2
   stack: 1
   defense: 20

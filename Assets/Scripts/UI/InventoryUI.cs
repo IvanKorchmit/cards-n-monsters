@@ -194,12 +194,17 @@ public class InventoryUI : MonoBehaviour
         ChangeCategory();
         Transform available = transform.Find("MainPanel/Craft/Available");
         Debug.Log(currentPage);
+        int unavailable = 0;
         for (int x = currentPage; available.childCount < 2; x++)
         {
             if (x >= currentCategory.Recipes.Length)
             {
                 currentPage = 0;
                 x = currentPage;
+                if(unavailable >= currentCategory.Recipes.Length)
+                {
+                    break;
+                }
             }
             CraftRecipe craft = currentCategory.Recipes[x];
             if (craft.isAvailable(playerStats.inventory))
@@ -209,6 +214,7 @@ public class InventoryUI : MonoBehaviour
             }
             else
             {
+                unavailable++;
                 currentPage++;
             }
         }

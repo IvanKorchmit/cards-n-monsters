@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: tin_bar
   m_EditorClassIdentifier: 
   name: Tin Bar
-  description: 
+  description: Same material as copper. You could make bronze bar out of copper and
+    tin
   sprite: {fileID: 3488122200766696783, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
-  cost: 2
-  id: 0
+  cost: 1
+  id: 38
   stack: 10
