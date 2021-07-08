@@ -498,22 +498,22 @@ MonoBehaviour:
   chestplate: {fileID: 0}
   leggings: {fileID: 0}
   inventory:
-  - item: {fileID: 11400000, guid: 2f6c49515d520ec4e8b52ad573c81741, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: 5dd5b8a3a4966e648bb9b24c004c85af, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: ae3c8a9487b0d6f4684b0ea5f26f7ae4, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: 91c7472fff0c1a74991dbbc3886cd8ce, type: 2}
-    quantity: 5
-  - item: {fileID: 11400000, guid: 6da483a1307639d4b82ca7a6c734645f, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: ae3c8a9487b0d6f4684b0ea5f26f7ae4, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: 3385394106b20b64db9cd30a8b684a43, type: 2}
-    quantity: 10
-  - item: {fileID: 11400000, guid: 3ce2ad2bb8ac10247a45111436cfa5bb, type: 2}
-    quantity: 10
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
   - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}

@@ -99,6 +99,10 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
                 dragItem = new Item(1, Player.inventory[slotNumber].item);
                 if (dragItem.item == null) return;
                 origin = slotNumber;
+                if (iUI.infoWindow.transform.Find("Control") != null)
+                {
+                    Destroy(iUI.infoWindow.transform.Find("Control").gameObject);
+                }
             }
         }
         else if (type == SpecializedSlot.weapon)
@@ -124,6 +128,10 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
                 dragItem = new Item(1, InventoryUI.npc.inventory[slotNumber].item);
                 if (dragItem.item == null) return;
                 origin = slotNumber;
+                if (iUI.infoWindow.transform.Find("Control") != null)
+                {
+                    Destroy(iUI.infoWindow.transform.Find("Control").gameObject);
+                }
             }
             else
             {

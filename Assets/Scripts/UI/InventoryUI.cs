@@ -59,6 +59,10 @@ public class InventoryUI : MonoBehaviour
         containerSection.gameObject.SetActive(npc != null);
         if (openInv)
         {
+            if(transform.Find("PressE") != null)
+            {
+                Destroy(transform.Find("PressE").gameObject);
+            }
             CheckRecipes();
             if (npc != null)
             {
@@ -193,7 +197,6 @@ public class InventoryUI : MonoBehaviour
     {
         ChangeCategory();
         Transform available = transform.Find("MainPanel/Craft/Available");
-        Debug.Log(currentPage);
         int unavailable = 0;
         for (int x = currentPage; available.childCount < 2; x++)
         {

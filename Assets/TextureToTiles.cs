@@ -7,12 +7,6 @@ public class TextureToTiles : MonoBehaviour
     public Tilemap tilemap;
     public Tilemap tallGrass;
     public ColorToTile[] colorToTiles;
-    private void Start()
-    {
-        Clear(tilemap);
-        Clear(tallGrass);
-        Draw(tilemap);
-    }
     public void Clear(Tilemap tm)
     {
         for (int x = 0; x < tm.size.x; x++)
