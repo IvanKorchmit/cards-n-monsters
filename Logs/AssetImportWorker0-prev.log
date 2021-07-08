@@ -1,0 +1,230 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.1052; Version 2009; 64bit' Language: 'ru' Physical Memory: 8145 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+E:\Unity\Editor\2020.3.12f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Desktop/CardsNMonsters
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64428
+Successfully changed project path to: E:/Desktop/CardsNMonsters
+E:/Desktop/CardsNMonsters
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 59.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.12f1 (b3b2c6512326)
+[Subsystems] Discovering subsystems at path E:/Unity/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Desktop/CardsNMonsters/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c82)
+    Vendor:   
+    VRAM:     4018 MB
+    Driver:   27.21.14.5751
+Initialize mono
+Mono path[0] = 'E:/Unity/Editor/2020.3.12f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Unity/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'E:/Unity/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/Unity/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002434 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 61.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.179 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004458 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 57.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.436 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2146 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.7 MB.
+System memory in use after: 96.7 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2583.
+Total: 2.807800 ms (FindLiveObjects: 0.217700 ms CreateObjectMapping: 0.104100 ms MarkObjects: 2.333600 ms  DeleteObjects: 0.151100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Resources/Items/black_chest.asset
+  artifactKey: Guid(d0735f10fafaaf643a3123513226f399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/black_chest.asset using Guid(d0735f10fafaaf643a3123513226f399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '209814132a786b7fdad8c54612291a7f') in 0.051767 seconds 
+  Import took 0.073534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Resources/Items/sapphire_chest.asset
+  artifactKey: Guid(e2b44c1b105f43f4d93d1d8298fea59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/sapphire_chest.asset using Guid(e2b44c1b105f43f4d93d1d8298fea59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b468b1ae44a6e33d652ca80826e78326') in 0.010162 seconds 
+  Import took 0.023991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.441490 seconds.
+  path: Assets/Resources/Items/black_leg.asset
+  artifactKey: Guid(3426a73135339f749b14cf23e696996c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/black_leg.asset using Guid(3426a73135339f749b14cf23e696996c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adf972ff8431b47a87a40b4ea77ce5e3') in 0.010344 seconds 
+  Import took 0.019962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Resources/Items/Copper Sword.asset
+  artifactKey: Guid(ce0b0c20036ca184e8f54c3c5d1063bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/Copper Sword.asset using Guid(ce0b0c20036ca184e8f54c3c5d1063bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dc2fc81239e35eece0a7ba586361eeb') in 0.010232 seconds 
+  Import took 0.033607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Resources/Items/iron_leg.asset
+  artifactKey: Guid(654fce56323821a4cb91bc4aa5c156d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/iron_leg.asset using Guid(654fce56323821a4cb91bc4aa5c156d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba1aa205f7a236c29624873516d9b1d7') in 0.011811 seconds 
+  Import took 0.015757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Resources/Items/gold_sword.asset
+  artifactKey: Guid(013f1e73ee0328b4eb9acd5e6ba1619e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/gold_sword.asset using Guid(013f1e73ee0328b4eb9acd5e6ba1619e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0905f0ede5be0aaabfd0914e29a9fe') in 0.009826 seconds 
+  Import took 0.019909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Resources/Items/Sapphire_Sword.asset
+  artifactKey: Guid(de43d63d5d01a0345af71a4f7caa5367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/Sapphire_Sword.asset using Guid(de43d63d5d01a0345af71a4f7caa5367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82a81fb1d3c8766d75b3455e5b1dedd0') in 0.011769 seconds 
+  Import took 0.028559 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Resources/Items/bronze_bar.asset
+  artifactKey: Guid(5dd5b8a3a4966e648bb9b24c004c85af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/bronze_bar.asset using Guid(5dd5b8a3a4966e648bb9b24c004c85af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc0dad891b49c636586280206585a03') in 0.028743 seconds 
+  Import took 0.046910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Resources/Items/gold_bar.asset
+  artifactKey: Guid(ae3c8a9487b0d6f4684b0ea5f26f7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/gold_bar.asset using Guid(ae3c8a9487b0d6f4684b0ea5f26f7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81647d1fd2efdaa64355e2caf57322c2') in 0.011256 seconds 
+  Import took 0.032701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Resources/Items/tin_bar.asset
+  artifactKey: Guid(3ce2ad2bb8ac10247a45111436cfa5bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/tin_bar.asset using Guid(3ce2ad2bb8ac10247a45111436cfa5bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e20b82a48021dbf697a5f3dcc15ff9e') in 0.017204 seconds 
+  Import took 0.026640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Resources/Items/bronze_sword.asset
+  artifactKey: Guid(93899c680156d6842987e9876597503d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/bronze_sword.asset using Guid(93899c680156d6842987e9876597503d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5551c0cc45ec4d34c62d0f18488c3852') in 0.011052 seconds 
+  Import took 0.019541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Resources/Items/BlackSword.asset
+  artifactKey: Guid(72beadc78aadfe841b481c102e0da8b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/BlackSword.asset using Guid(72beadc78aadfe841b481c102e0da8b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '256a457b9c5ac16817edd0067270d9fd') in 0.013180 seconds 
+  Import took 0.027833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000448 seconds.
+  path: Assets/Resources/Items/copper_bar.asset
+  artifactKey: Guid(6da483a1307639d4b82ca7a6c734645f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/copper_bar.asset using Guid(6da483a1307639d4b82ca7a6c734645f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f06797657505c3900cb769b798c1ed1') in 0.017756 seconds 
+  Import took 0.033833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Resources/Items/Copper_Leggings.asset
+  artifactKey: Guid(7f096d2e0c3f35f47bdd3dbc27e3b38e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/Copper_Leggings.asset using Guid(7f096d2e0c3f35f47bdd3dbc27e3b38e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cfd2e5db6b0181d50b8a580d280c4ef') in 0.009723 seconds 
+  Import took 0.044834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Resources/Items/TinSword.asset
+  artifactKey: Guid(f2ed81b76b51aef49b7ad8f320a55fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/TinSword.asset using Guid(f2ed81b76b51aef49b7ad8f320a55fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0bd9cc8bde6f19b312d2827722b2b34') in 0.010858 seconds 
+  Import took 0.044972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Resources/Items/tin_leggings.asset
+  artifactKey: Guid(cc4b4da9c3b3eb24788df3cac1969a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/tin_leggings.asset using Guid(cc4b4da9c3b3eb24788df3cac1969a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e7e1b95dc25574dd610f5c8263e1be0') in 0.010468 seconds 
+  Import took 0.046989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Resources/Items/gold_leg.asset
+  artifactKey: Guid(ff0a8b4473bfda840a98294357a12ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/gold_leg.asset using Guid(ff0a8b4473bfda840a98294357a12ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e75ba0a2af622d143c970f5465e79941') in 0.009933 seconds 
+  Import took 0.021493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Resources/Items/sapphire_leg.asset
+  artifactKey: Guid(d2a9e36327531f845b8d65320c86c9b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/sapphire_leg.asset using Guid(d2a9e36327531f845b8d65320c86c9b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6140c8cf8dffc8aab1e42624857691df') in 0.023475 seconds 
+  Import took 0.032203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Resources/Items/bronze_leggings.asset
+  artifactKey: Guid(075dd2483f5ef5d459198f574e0ffa6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/bronze_leggings.asset using Guid(075dd2483f5ef5d459198f574e0ffa6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ea0f0066548113222c3d4e5b86dc4aa') in 0.018957 seconds 
+  Import took 0.029615 seconds .
+

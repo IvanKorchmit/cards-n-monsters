@@ -47,7 +47,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 1b920e7892d6238418436bdb398c8e05, type: 3}
     - {fileID: 2800000, guid: b14469df47ebd444e84f2e0c89c54ba7, type: 3}
     - {fileID: 2800000, guid: d9a18f6e2fc107c498bd6d6cd44b0ec1, type: 3}
-    totalSpriteSurfaceArea: 74752
+    - {fileID: 2800000, guid: 3773fd5d0028975479ac73bf37cffac6, type: 3}
+    - {fileID: 2800000, guid: bd9696db4792cb24096d7788a7ad97e2, type: 3}
+    totalSpriteSurfaceArea: 76288
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -148,6 +150,12 @@ SpriteAtlas:
   - {fileID: 6399507840787211314, guid: 1b920e7892d6238418436bdb398c8e05, type: 3}
   - {fileID: 3925414852906784594, guid: 1b920e7892d6238418436bdb398c8e05, type: 3}
   - {fileID: 1433647835158291232, guid: 1b920e7892d6238418436bdb398c8e05, type: 3}
+  - {fileID: 6224024930817484846, guid: bd9696db4792cb24096d7788a7ad97e2, type: 3}
+  - {fileID: 2572236292851511218, guid: bd9696db4792cb24096d7788a7ad97e2, type: 3}
+  - {fileID: 7466519112198254181, guid: 3773fd5d0028975479ac73bf37cffac6, type: 3}
+  - {fileID: 6679328326721774694, guid: 3773fd5d0028975479ac73bf37cffac6, type: 3}
+  - {fileID: -5390007138980725549, guid: 3773fd5d0028975479ac73bf37cffac6, type: 3}
+  - {fileID: -1819830194433888264, guid: 3773fd5d0028975479ac73bf37cffac6, type: 3}
   - {fileID: -8699625482541703765, guid: 473b7d2e0674f1d46bb3f53eb788b5c1, type: 3}
   - {fileID: -4949627433556570602, guid: 473b7d2e0674f1d46bb3f53eb788b5c1, type: 3}
   - {fileID: 2017584122348643233, guid: 473b7d2e0674f1d46bb3f53eb788b5c1, type: 3}
@@ -441,6 +449,12 @@ SpriteAtlas:
   - grass_32
   - grass_31
   - grass_30
+  - Trees_1
+  - Trees_0
+  - Mountain_3
+  - Mountain_2
+  - Mountain_1
+  - Mountain_0
   - Desert_21
   - Desert_20
   - Desert_23

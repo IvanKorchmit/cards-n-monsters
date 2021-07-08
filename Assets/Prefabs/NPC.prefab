@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   maxHealth: 0
-  Money: 0
+  Money: 8
   dropableItem: {fileID: 8990615170850155902, guid: b61e0126471080a4ab3ce787aed39338, type: 3}
   weapon: {fileID: 0}
   helmet: {fileID: 0}
@@ -63,7 +63,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 25bb775955c2e8043824b0f9de8e94d4, type: 2}
     quantity: 5
   - item: {fileID: 11400000, guid: b61bed035b1884c48929b5fe81f0dca5, type: 2}
-    quantity: 6
+    quantity: 5
   - item: {fileID: 11400000, guid: 148555f002496ec4bb4e70a7d222c5c3, type: 2}
     quantity: 3
   - item: {fileID: 11400000, guid: 138e03f6a61bbeb4098e26ecba725fe3, type: 2}
