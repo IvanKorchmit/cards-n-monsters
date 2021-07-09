@@ -568,3 +568,388 @@ Received Import Request.
 Start importing Assets/Graphics/npc/Forest using Guid(3ab9b90d3341823418cd347e5dfc5271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6f22cf663af8312e81a54143b5e421b') in 0.013792 seconds 
   Import took 0.033389 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 136.711111 seconds.
+  path: Assets/Graphics/npc/Forest/ForestNPC.overrideController
+  artifactKey: Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/ForestNPC.overrideController using Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b10df94aa435003541c725e85785dc21') in 0.018882 seconds 
+  Import took 0.037130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.884484 seconds.
+  path: Assets/Graphics/npc/Forest/ForestNPC.overrideController
+  artifactKey: Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/ForestNPC.overrideController using Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8a52930aeb61b0cac230aa698e60e8f') in 0.017321 seconds 
+  Import took 0.023391 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.250822 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right.anim
+  artifactKey: Guid(ce52e8e1ee469a943b2cba3010cc8dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right.anim using Guid(ce52e8e1ee469a943b2cba3010cc8dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6395505639bc94177d1e114ec9fa12') in 0.012989 seconds 
+  Import took 0.032122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.905460 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 1.anim
+  artifactKey: Guid(55952edf84a2d5046a79418b35853edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 1.anim using Guid(55952edf84a2d5046a79418b35853edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3adc98b1497f48732243c52e445a3186') in 0.010202 seconds 
+  Import took 0.022860 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.329165 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 2.anim
+  artifactKey: Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 2.anim using Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32e39750e69f706ccf04bace257ecfe8') in 0.010813 seconds 
+  Import took 0.015722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004432 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 2.anim
+  artifactKey: Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 2.anim using Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32e39750e69f706ccf04bace257ecfe8') in 0.006154 seconds 
+  Import took 0.010405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.251822 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim
+  artifactKey: Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim using Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8455e281bdad4255f3dd3308a0909b') in 0.009878 seconds 
+  Import took 0.016542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008937 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim
+  artifactKey: Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim using Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8455e281bdad4255f3dd3308a0909b') in 0.005268 seconds 
+  Import took 0.009372 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.331052 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 4.anim
+  artifactKey: Guid(039f40614cf186d4c902c2b4e6b1648b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 4.anim using Guid(039f40614cf186d4c902c2b4e6b1648b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba29591fb3f7d9a4050386199dacb4e3') in 0.009237 seconds 
+  Import took 0.040849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.256347 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 5.anim
+  artifactKey: Guid(7556098b89500844f8cd7113619145ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 5.anim using Guid(7556098b89500844f8cd7113619145ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cf99d1d56b36fb77c4e0a11a9b224ee') in 0.009272 seconds 
+  Import took 0.013661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.273819 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 1.anim
+  artifactKey: Guid(55952edf84a2d5046a79418b35853edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 1.anim using Guid(55952edf84a2d5046a79418b35853edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bee72a07ecf31902dc7f666483e0dcb6') in 0.004182 seconds 
+  Import took 0.022512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.787786 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Left.anim
+  artifactKey: Guid(55952edf84a2d5046a79418b35853edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Left.anim using Guid(55952edf84a2d5046a79418b35853edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba73dbe2bf0caa3093ffaa57c22b151a') in 0.009928 seconds 
+  Import took 0.023147 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.949507 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 2.anim
+  artifactKey: Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 2.anim using Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c55af690ffeb1e1f2dd025c7406ce15') in 0.004867 seconds 
+  Import took 0.027315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.750980 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Front.anim
+  artifactKey: Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Front.anim using Guid(71395c16a74b0854584fc3a6f4246768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dfb4def76ef30b13a5f2e600435a39c') in 0.009326 seconds 
+  Import took 0.013417 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.273930 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim
+  artifactKey: Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim using Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20834153038e8e32eb1624ca15e45c39') in 0.004563 seconds 
+  Import took 0.009864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002029 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim
+  artifactKey: Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 3.anim using Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20834153038e8e32eb1624ca15e45c39') in 0.005027 seconds 
+  Import took 0.009094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.803142 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Back.anim
+  artifactKey: Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Back.anim using Guid(70616c1dc2ceb474298f8ab0fdebd35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '731e04d4628775f22d73f081c6c0fb0b') in 0.011184 seconds 
+  Import took 0.016910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.045057 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Walk_Right 4.anim
+  artifactKey: Guid(039f40614cf186d4c902c2b4e6b1648b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Walk_Right 4.anim using Guid(039f40614cf186d4c902c2b4e6b1648b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '418fa0c5cf24ea9662b867851b57f238') in 0.004308 seconds 
+  Import took 0.030685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 90.385184 seconds.
+  path: Assets/Graphics/npc/Forest/ForestNPC.overrideController
+  artifactKey: Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/ForestNPC.overrideController using Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '090d84c85da43ed42758e43a46c96542') in 0.014365 seconds 
+  Import took 0.039172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 172.499304 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front.anim
+  artifactKey: Guid(a5ec28faa09d7324895664c9612d0931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front.anim using Guid(a5ec28faa09d7324895664c9612d0931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a15bec0e6a0b0ef6f5fa9e8e304242f') in 0.010639 seconds 
+  Import took 0.025089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001731 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front.anim
+  artifactKey: Guid(a5ec28faa09d7324895664c9612d0931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front.anim using Guid(a5ec28faa09d7324895664c9612d0931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a15bec0e6a0b0ef6f5fa9e8e304242f') in 0.005146 seconds 
+  Import took 0.009330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.407120 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 1.anim
+  artifactKey: Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 1.anim using Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525ebe5c665f114eee42deeac6135d1e') in 0.009844 seconds 
+  Import took 0.023042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001527 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 1.anim
+  artifactKey: Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 1.anim using Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525ebe5c665f114eee42deeac6135d1e') in 0.004606 seconds 
+  Import took 0.009720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.685751 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 2.anim
+  artifactKey: Guid(f1ec8144564ed3244bdaf368f8c4cc57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 2.anim using Guid(f1ec8144564ed3244bdaf368f8c4cc57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56aa5d01c8361e38163860570e19e323') in 0.014870 seconds 
+  Import took 0.052480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.609043 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 3.anim
+  artifactKey: Guid(877d4f9e1fae69147826d92c6292a11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 3.anim using Guid(877d4f9e1fae69147826d92c6292a11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf115e9d9654117b0125c114b9a9f289') in 0.010494 seconds 
+  Import took 0.016240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002919 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 3.anim
+  artifactKey: Guid(877d4f9e1fae69147826d92c6292a11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 3.anim using Guid(877d4f9e1fae69147826d92c6292a11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf115e9d9654117b0125c114b9a9f289') in 0.004063 seconds 
+  Import took 0.009534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.764729 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 1.anim
+  artifactKey: Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 1.anim using Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d95e35fb973f4af2586080b3ce9a87e') in 0.004175 seconds 
+  Import took 0.023282 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.362433 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Front 2.anim
+  artifactKey: Guid(f1ec8144564ed3244bdaf368f8c4cc57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Front 2.anim using Guid(f1ec8144564ed3244bdaf368f8c4cc57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e4edad9d6fdd9954725fe0d8558709') in 0.003320 seconds 
+  Import took 0.026023 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.656757 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Back.anim
+  artifactKey: Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Back.anim using Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4125147fa04d9373dcfdd80a19ea9fc') in 0.010739 seconds 
+  Import took 0.044583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.598189 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Left.anim
+  artifactKey: Guid(f1ec8144564ed3244bdaf368f8c4cc57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Left.anim using Guid(f1ec8144564ed3244bdaf368f8c4cc57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25a175686842c5b6ce35b17aa9e577e4') in 0.009210 seconds 
+  Import took 0.017881 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.172568 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Right.anim
+  artifactKey: Guid(877d4f9e1fae69147826d92c6292a11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Right.anim using Guid(877d4f9e1fae69147826d92c6292a11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '939562953ef7dbf402fff482ef03a258') in 0.009728 seconds 
+  Import took 0.031547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 249.725493 seconds.
+  path: Assets/Graphics/npc/Forest/ForestNPC.overrideController
+  artifactKey: Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/ForestNPC.overrideController using Guid(feed3d0a7c140b14e97483efdc5f2e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4077ec837d95d1fc01f6a17e8a8ba80') in 0.024024 seconds 
+  Import took 0.035176 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005243 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.300 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2131 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.7 MB.
+System memory in use after: 98.7 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2607.
+Total: 2.580400 ms (FindLiveObjects: 0.218100 ms CreateObjectMapping: 0.086800 ms MarkObjects: 2.151100 ms  DeleteObjects: 0.123500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 63.623673 seconds.
+  path: Assets/Graphics/npc/Forest/Forest_Back.anim
+  artifactKey: Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest_Back.anim using Guid(917fee191e720cb46bb5aa86b76666d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85557939ee90c7f56c6956adac285efc') in 0.016425 seconds 
+  Import took 0.039685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Graphics/npc/Forest/Forest2
+  artifactKey: Guid(4ba28eb15d1573440bfa155236966159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest2 using Guid(4ba28eb15d1573440bfa155236966159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bd88b256a069b287322cacd81055e87') in 0.008802 seconds 
+  Import took 0.023814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.568151 seconds.
+  path: Assets/Graphics/npc/Forest/ForestNPC 1.overrideController
+  artifactKey: Guid(1b0a5909cc5826d44b32d8d85082e7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/ForestNPC 1.overrideController using Guid(1b0a5909cc5826d44b32d8d85082e7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a2bae6c4e017fb56a43295808c6fc95') in 0.022806 seconds 
+  Import took 0.028950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.579600 seconds.
+  path: Assets/Graphics/npc/Forest/Forest2/ForestNPC 1.overrideController
+  artifactKey: Guid(1b0a5909cc5826d44b32d8d85082e7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest2/ForestNPC 1.overrideController using Guid(1b0a5909cc5826d44b32d8d85082e7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c27568e9fe85df8a5741463d2c65a5') in 0.020238 seconds 
+  Import took 0.036970 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 143.686655 seconds.
+  path: Assets/Graphics/npc/Forest/Forest2/Forest_Left 1.anim
+  artifactKey: Guid(8b0931431cb470848a788d3c7825f585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest2/Forest_Left 1.anim using Guid(8b0931431cb470848a788d3c7825f585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cd20b65e5a6c50f9fe05c0ea1a6456a') in 0.009054 seconds 
+  Import took 0.025558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 97.877850 seconds.
+  path: Assets/Graphics/npc/Forest/Forest2/ForestNPC 1.overrideController
+  artifactKey: Guid(1b0a5909cc5826d44b32d8d85082e7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/npc/Forest/Forest2/ForestNPC 1.overrideController using Guid(1b0a5909cc5826d44b32d8d85082e7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4d16699d4feaab8aed722d7da75ead9') in 0.020872 seconds 
+  Import took 0.028204 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004543 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.275 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2131 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.7 MB.
+System memory in use after: 98.7 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2611.
+Total: 3.316700 ms (FindLiveObjects: 0.631800 ms CreateObjectMapping: 0.283900 ms MarkObjects: 2.180800 ms  DeleteObjects: 0.150900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.0 MB.
+System memory in use after: 57.0 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2611.
+Total: 2.341700 ms (FindLiveObjects: 0.213600 ms CreateObjectMapping: 0.092200 ms MarkObjects: 1.924400 ms  DeleteObjects: 0.110600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
