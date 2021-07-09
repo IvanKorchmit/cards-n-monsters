@@ -6,6 +6,7 @@ public class DemonAI : BaseEnemyAI
 {
     public PerkClass[] perks;
     private Vector2 moveDirection;
+    private Stats stats;
     public float speed;
     private Rigidbody2D rb;
     GameObject player;
@@ -14,20 +15,30 @@ public class DemonAI : BaseEnemyAI
     public int currentPerk;
     public float Cooldown;
     private float curTime;
+    private bool enraged;
     protected override void Start()
     {
+        stats = GetComponent<Stats>();
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
     public void UsePerk()
     {
-        perks[currentPerk].Use(gameObject);
-        currentPerk = (currentPerk + 1) % perks.Length;
+        if (Vector2.Distance(player.transform.position, transform.position) < 20)
+        {
+            perks[currentPerk].Use(gameObject);
+            currentPerk = (currentPerk + 1) % perks.Length;
+        }
     }
     public void Enrage()
     {
-
+        if (!enraged)
+        {
+            Cooldown /= 2;
+            speed *= 1.5f;
+            enraged = true;
+        }
     }
     protected override void FixedUpdate()
     {
@@ -37,6 +48,7 @@ public class DemonAI : BaseEnemyAI
             curTime = 0;
             UsePerk();
         }
+        
         Move();
     }
 
@@ -54,9 +66,13 @@ public class DemonAI : BaseEnemyAI
             {
                 moveDirection = (player.transform.position - transform.position).normalized;
             }
-            else
+            else if (dist < 4)
             {
                 rb.velocity = (player.transform.position - transform.position).normalized * 2;
+            }
+            else
+            {
+                moveDirection = Vector2.zero;
             }
             if (rb.velocity.magnitude <= 0.5f)
             {

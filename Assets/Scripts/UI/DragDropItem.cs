@@ -408,6 +408,10 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
                 if (Player.inventory[slotNumber].item != null)
                 {
                     Player.inventory[slotNumber].item.Use(Player.gameObject, ref consumed);
+                    if(iUI.infoWindow.Find("DoubleClick") != null)
+                    {
+                        Destroy(iUI.infoWindow.Find("DoubleClick").gameObject);
+                    }
                     if (consumed)
                     {
                         Player.inventory[slotNumber].quantity--;

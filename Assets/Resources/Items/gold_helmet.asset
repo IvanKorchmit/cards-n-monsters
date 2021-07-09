@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Gold Helmet
   description: Crown!
   sprite: {fileID: 7280614561070218308, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 20
+  id: 18
   stack: 1
   defense: 6

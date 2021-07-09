@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Tin Helmet
   description: Same as copper
   sprite: {fileID: -1398113343881063737, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 3
+  id: 40
   stack: 0
   defense: 0

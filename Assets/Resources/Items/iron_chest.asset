@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Iron Chestplate
   description: Never break your heart!
   sprite: {fileID: 5935675862632836086, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 8
+  id: 26
   stack: 1
   defense: 4

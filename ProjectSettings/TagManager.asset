@@ -10,6 +10,7 @@ TagManager:
   - Anvil
   - Furnace
   - Boiler
+  - Respawner
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Bronze Helmet
   description: Head protection
   sprite: {fileID: 8106906011934125022, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 7
+  id: 7
   stack: 1
   defense: 5

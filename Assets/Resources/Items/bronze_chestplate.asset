@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Bronze Chestplate
   description: Better protection than iron a little bit.
   sprite: {fileID: -4032680140326508588, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 30
+  id: 6
   stack: 1
   defense: 5

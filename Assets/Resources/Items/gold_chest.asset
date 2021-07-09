@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Gold Chestplate
   description: Go on, king!
   sprite: {fileID: -2901073741589171785, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
-  cost: 0
-  id: 0
+  cost: 14
+  id: 17
   stack: 1
   defense: 6

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class Teleport : PerkClass
 {
     public int damage;
+    public GameObject sparkles;
     public override void Use(GameObject owner)
     {
         if(owner.CompareTag("Enemy"))
@@ -31,5 +32,6 @@ public class Teleport : PerkClass
             owner.transform.position = enemy.transform.position;
             enemy.GetComponent<IDamagable>().Damage(damage * 2, owner, 16);
         }
+        Instantiate(sparkles, owner.transform.position, Quaternion.identity);
     }
 }

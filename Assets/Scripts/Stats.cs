@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour, IDamagable
 {
     [SerializeField] private int health;
-    [SerializeField] private int maxHealth;
+    public int maxHealth;
     public int Money;
     public GameObject dropableItem;
     public Weapon weapon;
@@ -157,9 +157,10 @@ public class Stats : MonoBehaviour, IDamagable
             {
                 Destroy(gameObject);
             }
-            else
+            else if (name.Contains("Player"))
             {
                 GameObject handler = new GameObject("Handler");
+                handler.tag = "Respawner";
                 handler.AddComponent<Stats>().StartCoroutine(handler.GetComponent<Stats>().Respawn(gameObject));
                 gameObject.GetComponent<Animator>().enabled = false;
                 gameObject.SetActive(false);
@@ -168,6 +169,13 @@ public class Stats : MonoBehaviour, IDamagable
     }
     public IEnumerator Respawn(GameObject player)
     {
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Respawner"))
+        {
+            if (g != gameObject)
+            {
+                Destroy(g);
+            }
+        }
         yield return new WaitForSeconds(3);
         GameObject canvas = GameObject.Find("Canvas");
         canvas.SetActive(false);

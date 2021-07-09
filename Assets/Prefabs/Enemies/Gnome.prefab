@@ -143,6 +143,8 @@ MonoBehaviour:
   inventory:
   - item: {fileID: 11400000, guid: 04e4f805ff7e07f4795ea6ba5ac606f5, type: 2}
     quantity: 2
+  - item: {fileID: 11400000, guid: da1d468e802485f44852133657e040e7, type: 2}
+    quantity: 1
 --- !u!1 &5582586885026875307
 GameObject:
   m_ObjectHideFlags: 0

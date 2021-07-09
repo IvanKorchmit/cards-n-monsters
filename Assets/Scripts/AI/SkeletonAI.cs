@@ -51,7 +51,7 @@ public class SkeletonAI : BaseEnemyAI
                     moveDirection = Vector2.zero;
                 }
             }
-            else
+            else if (dist < 4 && rb.velocity.magnitude <= 0.5f)
             {
 
 
@@ -63,6 +63,10 @@ public class SkeletonAI : BaseEnemyAI
                 {
                     rb.velocity = (closest.transform.position - transform.position).normalized * 9;
                 }
+            }
+            else
+            {
+                moveDirection = Vector2.zero;
             }
             if (rb.velocity.magnitude <= 0.5f)
             {
@@ -85,6 +89,7 @@ public class SkeletonAI : BaseEnemyAI
                 rb.velocity = -(closest.transform.position - transform.position).normalized * 9;
 
             }
+            GetComponent<Stats>().Damage(6, gameObject, 0);
         }
     }
     public void FinishRaising()
