@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Shiny!
   sprite: {fileID: -312318039103235053, guid: 3d4dab76392b55f44ac93cbfb0e4b2dc, type: 3}
   cost: 20
-  id: 0
+  id: 33
   stack: 5

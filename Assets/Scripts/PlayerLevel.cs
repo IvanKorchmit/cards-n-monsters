@@ -120,6 +120,8 @@ public static class PlayerLevel
                     Player.leggings = null;
                 }
             }
+
+            Player.Money = playerData.Money;
         }
     }
 }
@@ -175,6 +177,7 @@ public class PlayerData
     public int chestplate;
     public int leggings;
 
+    public int Money;
 
     public void Save()
     {
@@ -185,6 +188,7 @@ public class PlayerData
         Level = PlayerLevel.Level;
         Health = PlayerLevel.Player.MaxHealth;
         plInventory = new ItemData[inv.Length];
+        Money = PlayerLevel.Player.Money;
         Stats pl = PlayerLevel.Player;
         weapon = pl.weapon != null ? pl.weapon.id : -1;
         helmet = pl.helmet != null ? pl.helmet.id : -1;

@@ -16,6 +16,6 @@ MonoBehaviour:
   description: Gains 25 health
   sprite: {fileID: -1061600653231999548, guid: 46665df5046b51d45a5dcab6603edac0, type: 3}
   cost: 5
-  id: 2
+  id: 22
   stack: 5
   healingStrength: 25

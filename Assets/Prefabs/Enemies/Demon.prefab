@@ -213,14 +213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2000
+  health: 1000
   maxHealth: 0
   Money: 0
   dropableItem: {fileID: 8990615170850155902, guid: b61e0126471080a4ab3ce787aed39338, type: 3}
   weapon: {fileID: 0}
-  helmet: {fileID: 11400000, guid: 6f7d2acf66ccde84d907a6c8627abfde, type: 2}
-  chestplate: {fileID: 11400000, guid: d0735f10fafaaf643a3123513226f399, type: 2}
-  leggings: {fileID: 11400000, guid: 3426a73135339f749b14cf23e696996c, type: 2}
+  helmet: {fileID: 11400000, guid: 3bd15f2ccadfe714db773cfc8d6a7d89, type: 2}
+  chestplate: {fileID: 11400000, guid: 7b3f2b9cd7d1d5f48a1b648c0ef0966b, type: 2}
+  leggings: {fileID: 11400000, guid: ff0a8b4473bfda840a98294357a12ef4, type: 2}
   inventory:
   - item: {fileID: 11400000, guid: 879fd504efab33c40b67e0799a7a4372, type: 2}
     quantity: 20

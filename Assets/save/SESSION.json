@@ -1,28 +1,28 @@
 {
     "plInventory": [
         {
-            "id": 23,
-            "quantity": 5
-        },
-        {
-            "id": 15,
-            "quantity": 2
-        },
-        {
-            "id": 33,
-            "quantity": 1
-        },
-        {
-            "id": 30,
-            "quantity": 4
-        },
-        {
             "id": 20,
             "quantity": 1
         },
         {
-            "id": 31,
+            "id": 39,
             "quantity": 1
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
         },
         {
             "id": -1,
@@ -41,10 +41,10 @@
             "quantity": 0
         }
     ],
-    "xp": 23,
-    "xpMax": 420,
-    "Level": 4,
-    "Health": 130,
+    "xp": 43,
+    "xpMax": 180,
+    "Level": 2,
+    "Health": 110,
     "weapon": 10,
     "helmet": -1,
     "chestplate": -1,

@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Used to craft some potions
   sprite: {fileID: 1185527514606905908, guid: 46665df5046b51d45a5dcab6603edac0, type: 3}
   cost: 4
-  id: 0
+  id: 15
   stack: 5

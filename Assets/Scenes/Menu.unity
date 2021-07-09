@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2607,6 +2607,38 @@ PrefabInstance:
     - target: {fileID: 1574133893006322236, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
       propertyPath: m_fontSizeMin
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2051842689}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScenesManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574133895031038186, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1574133895031038188, guid: 05cdd290285b2d742ad71fb4463fdb80, type: 3}
       propertyPath: m_Pivot.x

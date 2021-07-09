@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Raw Gold Ore
   description: Economy's essence of life!
   sprite: {fileID: -7842767717587253991, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
-  cost: 0
-  id: 0
+  cost: 7
+  id: 20
   stack: 10

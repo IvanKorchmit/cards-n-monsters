@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Used to be melt using furnace to get some iron.
   sprite: {fileID: -2905485467000124020, guid: 7c735e5cb9f1da942a3c8098cc152a1f, type: 3}
   cost: 4
-  id: 8
+  id: 30
   stack: 10

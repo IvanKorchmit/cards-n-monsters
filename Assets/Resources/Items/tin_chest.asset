@@ -16,6 +16,6 @@ MonoBehaviour:
   description: Same as copper
   sprite: {fileID: 714426312288904525, guid: 85c615727a2e61f44bfadf4ec800e4f4, type: 3}
   cost: 3
-  id: 0
+  id: 39
   stack: 1
   defense: 2

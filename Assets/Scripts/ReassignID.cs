@@ -24,8 +24,11 @@ public class ReassignID : EditorWindow
         for (int i = 0; i < items.Length; i++)
         {
             items[i].id = i;
+            EditorUtility.SetDirty(items[i]);
             Debug.Log(items[i].name + " " + items[i].id);
         }
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }
 }
 #endif

@@ -48,7 +48,10 @@ public class DemonAI : BaseEnemyAI
             curTime = 0;
             UsePerk();
         }
-        
+        if(stats.Health <= stats.MaxHealth / 2)
+        {
+            Enrage();
+        }
         Move();
     }
 
