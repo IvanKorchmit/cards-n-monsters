@@ -66,7 +66,6 @@ public class npcAI : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Test");
             hint.gameObject.SetActive(false);
         }
     }
