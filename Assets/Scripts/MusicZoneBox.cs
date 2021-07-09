@@ -16,4 +16,15 @@ public class MusicZoneBox : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && collision.name.Contains("Player"))
+        {
+            if (Camera.main.GetComponent<AudioSource>().clip != clip)
+            {
+                MusicZoneTheme.newMusic = clip;
+                Camera.main.GetComponent<Animator>().SetTrigger("Change");
+            }
+        }
+    }
 }

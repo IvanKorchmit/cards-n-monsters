@@ -11,10 +11,12 @@ public class npcAI : MonoBehaviour
     public float Cooldown;
     private float timer;
     public bool isBusy;
-    private float curTime;
+    private Transform hint;
     // Start is called before the first frame update
     void Start()
     {
+        hint = transform.Find("Hint");
+        hint.gameObject.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -52,5 +54,20 @@ public class npcAI : MonoBehaviour
             yield return null;
         }
         animator.SetInteger("Speed", 0);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            hint.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Test");
+            hint.gameObject.SetActive(false);
+        }
     }
 }

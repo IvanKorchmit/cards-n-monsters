@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+#if (UNITY_EDITOR)
 using UnityEngine;
 using UnityEditor;
 [CustomEditor(typeof(TextureToTiles))]
@@ -17,3 +16,4 @@ public class EditorTexToTile : Editor
         }
     }
 }
+#endif
