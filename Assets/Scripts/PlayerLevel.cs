@@ -56,6 +56,70 @@ public static class PlayerLevel
                     }
                 }
             }
+            // weapon
+            foreach (BaseItem item in items)
+            {
+                if (playerData.weapon != -1)
+                {
+                    if (item.id == playerData.weapon)
+                    {
+                        Player.weapon = item as Weapon;
+                        break;
+                    }
+                }
+                else
+                {
+                    Player.weapon = null;
+                }
+            }
+            // helmet
+            foreach (BaseItem item in items)
+            {
+                if (playerData.helmet != -1)
+                {
+                    if (item.id == playerData.helmet)
+                    {
+                        Player.helmet = item as Helmet;
+                        break;
+                    }
+                }
+                else
+                {
+                    Player.helmet = null;
+                }
+            }
+            // chestplate
+            foreach (BaseItem item in items)
+            {
+                if (playerData.chestplate != -1)
+                {
+                    if (item.id == playerData.chestplate)
+                    {
+                        Player.chestplate = item as Chestplate;
+                        break;
+                    }
+                }
+                else
+                {
+                    Player.chestplate = null;
+                }
+            }
+            // leggings
+            foreach (BaseItem item in items)
+            {
+                if (playerData.leggings != -1)
+                {
+                    if (item.id == playerData.leggings)
+                    {
+                        Player.leggings = item as Leggings;
+                        break;
+                    }
+                }
+                else
+                {
+                    Player.leggings = null;
+                }
+            }
         }
     }
 }
@@ -105,6 +169,13 @@ public class PlayerData
     public int Level = 1;
     public int Health = 100;
 
+
+    public int weapon;
+    public int helmet;
+    public int chestplate;
+    public int leggings;
+
+
     public void Save()
     {
         Debug.Log("Saving");
@@ -114,6 +185,11 @@ public class PlayerData
         Level = PlayerLevel.Level;
         Health = PlayerLevel.Player.MaxHealth;
         plInventory = new ItemData[inv.Length];
+        Stats pl = PlayerLevel.Player;
+        weapon = pl.weapon != null ? pl.weapon.id : -1;
+        helmet = pl.helmet != null ? pl.helmet.id : -1;
+        chestplate = pl.chestplate != null ? pl.chestplate.id : -1;
+        leggings = pl.leggings != null ? pl.leggings.id : -1;
         for (int i = 0; i < plInventory.Length; i++)
         {
             if (inv[i].item != null)
@@ -126,7 +202,7 @@ public class PlayerData
             }
         }
         string json = JsonUtility.ToJson(this,true);
-        if (File.Exists(SAVE_PATH))
+        if (File.Exists(SAVE_PATH+ "SESSION.json"))
         {
             File.WriteAllText(SAVE_PATH + "SESSION.json", json);
         }
@@ -140,12 +216,15 @@ public class PlayerData
     }
     public PlayerData LoadFromJSON()
     {
-        if (File.Exists(SAVE_PATH))
+        if (File.Exists(SAVE_PATH + "SESSION.json"))
         {
+            Debug.Log("success");
             string json = File.ReadAllText(SAVE_PATH + "SESSION.json", Encoding.UTF8);
 
             return JsonUtility.FromJson<PlayerData>(json);
         }
+        Debug.Log("fail");
+
         return null;
     }
 }
