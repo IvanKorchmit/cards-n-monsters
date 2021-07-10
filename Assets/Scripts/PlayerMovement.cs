@@ -30,8 +30,16 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        rawMovement.x = Input.GetAxisRaw("Horizontal");
-        rawMovement.y = Input.GetAxisRaw("Vertical");
+        if (!Settings.isAzerty)
+        {
+            rawMovement.x = Input.GetAxisRaw("Horizontal");
+            rawMovement.y = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            rawMovement.x = Input.GetAxisRaw("Horizontal_AZERTY");
+            rawMovement.y = Input.GetAxisRaw("Vertical_AZERTY");
+        }
         if(rawMovement != Vector2.zero)
         {
             lastMove = rawMovement;
