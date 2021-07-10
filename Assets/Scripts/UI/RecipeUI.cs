@@ -57,6 +57,7 @@ public class RecipeUI : MonoBehaviour
                 Player.DropItem(recipe.result);
             }
             GameObject.Find("Canvas").GetComponent<InventoryUI>().CheckRecipes();
+            SoundsStatic.PlayPitched(SoundsStatic.Craft);
         }
     }
 }

@@ -21,7 +21,6 @@ public class ChestHint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Test");
             hint.gameObject.SetActive(false);
         }
     }

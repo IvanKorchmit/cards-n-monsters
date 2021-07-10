@@ -8,5 +8,6 @@ public class HealingPotion : Potion
     {
         base.Use(owner, ref consumed);
         owner.GetComponent<Stats>().Heal(healingStrength);
+        SoundsStatic.PlayPitched(SoundsStatic.Drink);
     }
 }

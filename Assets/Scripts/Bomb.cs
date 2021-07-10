@@ -25,7 +25,7 @@ public class Bomb : MonoBehaviour
     {
         var expl = Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(expl, expl.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length);
-        var hit = Physics2D.CircleCastAll(transform.position, 3, Vector2.zero, 0.01f);
+        var hit = Physics2D.CircleCastAll(transform.position, 1.5f, Vector2.zero, 0.01f);
         foreach (RaycastHit2D item in hit)
         {
             if(item.collider != null && item.collider.gameObject.TryGetComponent(out IDamagable damage))
@@ -33,6 +33,7 @@ public class Bomb : MonoBehaviour
                 damage.Damage(10, gameObject, 20);
             }
         }
+        SoundsStatic.PlayPitched(SoundsStatic.Explosion);
         Destroy(gameObject);
     }
 }
