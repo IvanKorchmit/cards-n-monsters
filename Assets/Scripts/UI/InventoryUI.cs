@@ -52,7 +52,7 @@ public class InventoryUI : MonoBehaviour
         {
             UpdateInventory();
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Backspace))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
         }

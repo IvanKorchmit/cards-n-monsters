@@ -1,0 +1,73 @@
+{
+    "plInventory": [
+        {
+            "id": 23,
+            "quantity": 1
+        },
+        {
+            "id": 20,
+            "quantity": 1
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        },
+        {
+            "id": -1,
+            "quantity": 0
+        }
+    ],
+    "xp": 47,
+    "xpMax": 660,
+    "Level": 6,
+    "Health": 1049,
+    "weapon": 4,
+    "helmet": -1,
+    "chestplate": 39,
+    "leggings": -1,
+    "Money": 10
+}

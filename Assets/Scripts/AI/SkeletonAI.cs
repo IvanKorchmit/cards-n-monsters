@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 public class SkeletonAI : BaseEnemyAI
 {
     public float speed;
@@ -26,7 +26,8 @@ public class SkeletonAI : BaseEnemyAI
         }
         if(TeamTag == "Player")
         {
-            closest = Utils.FindClosest("Enemy", gameObject);
+            var ray = Physics2D.CircleCastAll(gameObject.transform.position, 10, new Vector2(), 0);
+            closest = Utils.FindClosest(ray, gameObject, "Enemy");
         }
         float ang = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         int angle = Mathf.RoundToInt(ang / 90) * 90;
@@ -118,6 +119,28 @@ public static class Utils
                     distance = Vector2.Distance(item.transform.position, origin.transform.position);
                 }
                 iteration++;
+            }
+            result = lastObject;
+        }
+        return result;
+    }
+    public static GameObject FindClosest(RaycastHit2D[] objects, GameObject origin, string tag)
+    {
+        GameObject result = null;
+        GameObject lastObject = null;
+        if (objects != null && objects.Length > 0)
+        {
+            float distance = Vector2.Distance(objects[0].transform.position, origin.transform.position);
+            foreach (var item in objects)
+            {
+                if (item.collider != null && item.collider.CompareTag(tag))
+                {
+                    if (distance >= Vector2.Distance(item.transform.position, origin.transform.position))
+                    {
+                        lastObject = item.collider.gameObject;
+                        distance = Vector2.Distance(item.transform.position, origin.transform.position);
+                    }
+                }
             }
             result = lastObject;
         }

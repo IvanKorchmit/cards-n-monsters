@@ -518,6 +518,16 @@ MonoBehaviour:
     quantity: 0
   - item: {fileID: 0}
     quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
 --- !u!114 &6732630923216134191
 MonoBehaviour:
   m_ObjectHideFlags: 0
