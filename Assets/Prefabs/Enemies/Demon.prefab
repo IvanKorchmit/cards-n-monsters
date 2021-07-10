@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8872512046416964614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8872512047651292371}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3402368762417361602, guid: 5f94ca5d8ac9128469622503e7777776, type: 3}
-  m_Color: {r: 1, g: 0.23921569, b: 0, a: 1}
+  m_Sprite: {fileID: 6897479667268090689, guid: 21293fb9eb1bf324eaf20c6e0866d88b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec6c75381e463645a714f7967acea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 1500
   maxHealth: 0
   Money: 0
   dropableItem: {fileID: 8990615170850155902, guid: b61e0126471080a4ab3ce787aed39338, type: 3}
@@ -281,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 8872512047651292372}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 29c5baceda2e1b14bb20294dcd4c967d, type: 2}
+  m_Controller: {fileID: 9100000, guid: e48bc29ea6f70ec408cd4326b9912517, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

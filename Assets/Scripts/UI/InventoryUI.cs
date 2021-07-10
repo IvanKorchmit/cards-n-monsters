@@ -52,6 +52,10 @@ public class InventoryUI : MonoBehaviour
         {
             UpdateInventory();
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        }
     }
     public void CheckInventory()
     {
@@ -248,9 +252,11 @@ public class InventoryUI : MonoBehaviour
         {
             infoWindow.gameObject.SetActive(true);
         }
-        Vector2 res = new Vector2();
+        Vector2 res;    
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out res);
         infoWindow.anchoredPosition = res;
+        Debug.Log(Screen.width);
+        infoWindow.anchoredPosition = new Vector2(infoWindow.anchoredPosition.x, Mathf.Clamp(infoWindow.anchoredPosition.y, 0, Screen.height) + 32);
         infoWindow.Find("Name/Text").GetComponent<TextMeshProUGUI>().text = item.item.name;
         infoWindow.Find("Cost/Text").GetComponent<TextMeshProUGUI>().text = $"{item.quantity}x{item.item.cost}$ {item.item.cost*item.quantity}$";
         infoWindow.Find("Description/Text").GetComponent<TextMeshProUGUI>().text = item.item.description;
